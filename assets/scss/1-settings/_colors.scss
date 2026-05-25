@@ -12,11 +12,11 @@ $active-C: blue;
 	--gray4: hsla(0, 0%, 72%, 1);
 	--color-primary: var(--gray1);
 
-	--MYLIFT-white-hsl: 0deg, 100%, 100%;
-	--white: hsla(var(--MYLIFT-white-hsl), 1.0);
+	--kamigos-white-hsl: 0deg, 100%, 100%;
+	--white: hsla(var(--kamigos-white-hsl), 1.0);
 
-	--MYLIFT-blue-hsl: 240deg, 100%, 51%; //#032AFF
-	--MYLIFT-blue: hsla(var(--MYLIFT-blue-hsl), 1);
+	--kamigos-blue-hsl: 240deg, 100%, 51%; //#032AFF
+	--kamigos-blue: hsla(var(--kamigos-blue-hsl), 1);
 
 	--corp-c-1: hsla(231, 100%, 51%, 1); // 
 	--corp-c-2: hsla(87, 31%, 86%, 1); // 
@@ -27,7 +27,7 @@ $active-C: blue;
 	--color-bg: var(--white);
 	--menu-bg: var(--white);
 	--color-contrast-high: var(--black);
-	--color-highlight: var(--MYLIFT-blue);
+	--color-highlight: var(--kamigos-blue);
 	--color-labels: var(--black);
 	
 }

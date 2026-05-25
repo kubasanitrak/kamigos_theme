@@ -9,14 +9,17 @@
 	
 // Create class attribute allowing for custom "className" values.
 
-	$VIDEO_LANDSCAPE = str_replace(".mp4", "", get_field( 'video_land_url' ));
-	$VIDEO_PORTRAIT = str_replace(".mp4", "", get_field( 'video_port_url' ));
+	$VIDEO_LANDSCAPE = str_replace( '.mp4', '', (string) get_field( 'video_land_url' ) );
+	$VIDEO_PORTRAIT = str_replace( '.mp4', '', (string) get_field( 'video_port_url' ) );
 
 	$POSTER_URL = get_field( 'video_poster' );
+	if ( is_array( $POSTER_URL ) && isset( $POSTER_URL['url'] ) ) {
+		$POSTER_URL = $POSTER_URL['url'];
+	}
 ?>
 
 	<div class="section section-full-width section--hero fixed toned">
-		<video lazyload playsinline autoplay muted loop poster="<?php echo get_field('$POSTER_URL'); ?>" id="bgvidID" class="playing web-video lazyload autoplay-anim inline-video" data-videosrc_portrait="<?php echo $VIDEO_PORTRAIT; ?>" data-videosrc="<?php echo $VIDEO_LANDSCAPE; ?>"> </video>
+		<video lazyload playsinline autoplay muted loop poster="<?php echo esc_url( $POSTER_URL ); ?>" id="bgvidID" class="playing web-video lazyload autoplay-anim inline-video" data-videosrc_portrait="<?php echo esc_url( $VIDEO_PORTRAIT ); ?>" data-videosrc="<?php echo esc_url( $VIDEO_LANDSCAPE ); ?>"> </video>
 	</div>
 	<div class="section section-full-width section--hero sticky" data-theme="transparent">
 		<h1 class="caps site-title">vertical</h1>

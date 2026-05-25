@@ -338,10 +338,6 @@
 			})();
 		</script>
 
-		<script>
-			window.lazySizesConfig = { addClasses: true };
-		</script>
-		
 		<script type="module">
 	        import { init } from '<?php echo get_template_directory_uri(); ?>/assets/js/lite-light.min.js';
 	

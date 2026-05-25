@@ -3,7 +3,7 @@
  * Displays social links
  *
  * @package WordPress
- * @subpackage kamigos-theme
+ * @subpackage kamigos_theme
  * @since 1.0
  * * @version 1.0
  */
@@ -12,7 +12,7 @@
 <div class="content">
 	<div class="fcbk-mail-tel">
 			<?php wp_nav_menu( array(
-						'theme_location' => 'social-links-menu',
+						'theme_location' => 'social-link',
 						'container' => '',
 						'menu_class' => 'social-links-list list-none',
 					) ); ?>

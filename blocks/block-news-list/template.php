@@ -78,7 +78,7 @@
                     <h5 class="news-list--item_title caps accord-item--title strong"><?php echo $POST_TITLE; ?></h5>
                     <div class="news-list--item_row accord-item--header_row">
                         <p class="news-list--item_info"><?php echo $DATE; ?></p>
-                        <p class="news-list--item_readmore strong"><?php _e('read more', 'kamigos-theme'); ?></p>
+                        <p class="news-list--item_readmore strong"><?php esc_html_e( 'read more', 'kamigos_theme' ); ?></p>
                     </div>
                 </div>
                 <div class="news-list--item_content accord-item--content">
@@ -94,6 +94,7 @@
             <h1 class="section-title caps"><?php echo get_field( 'news_list_title' ); ?></h1>
         </div>
 
-<?php else: __( 'Sorry, there are no items to display', 'kamigos-theme' ); ?>
+<?php else: ?>
+    <p><?php esc_html_e( 'Sorry, there are no items to display', 'kamigos_theme' ); ?></p>
 <?php endif;  ?>
                     

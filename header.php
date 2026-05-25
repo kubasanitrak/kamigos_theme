@@ -2,6 +2,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php
+$theme_dir = get_template_directory();
+$theme_uri = get_template_directory_uri();
+?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 
@@ -15,13 +19,23 @@
 <meta property="og:url" content="" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/og-image.png" />
+<?php if ( file_exists( $theme_dir . '/og-image.png' ) ) : ?>
+<meta property="og:image" content="<?php echo esc_url( $theme_uri . '/og-image.png' ); ?>" />
+<?php endif; ?>
 
 
-<link href="<?php echo get_template_directory_uri(); ?>/assets/apple-touch-icon.png" rel="apple-touch-icon">
-<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.svg">
-<link rel="alternate icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico">
-<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/safari-pinned-tab.svg" color="">
+<?php if ( file_exists( $theme_dir . '/assets/apple-touch-icon.png' ) ) : ?>
+<link href="<?php echo esc_url( $theme_uri . '/assets/apple-touch-icon.png' ); ?>" rel="apple-touch-icon">
+<?php endif; ?>
+<?php if ( file_exists( $theme_dir . '/assets/favicon.svg' ) ) : ?>
+<link rel="icon" type="image/svg+xml" href="<?php echo esc_url( $theme_uri . '/assets/favicon.svg' ); ?>">
+<?php endif; ?>
+<?php if ( file_exists( $theme_dir . '/assets/favicon.ico' ) ) : ?>
+<link rel="alternate icon" href="<?php echo esc_url( $theme_uri . '/assets/favicon.ico' ); ?>">
+<?php endif; ?>
+<?php if ( file_exists( $theme_dir . '/assets/safari-pinned-tab.svg' ) ) : ?>
+<link rel="mask-icon" href="<?php echo esc_url( $theme_uri . '/assets/safari-pinned-tab.svg' ); ?>" color="">
+<?php endif; ?>
 
 <!-- PREFETCH WEBFONTS -->
 <!-- <link rel="prefetch" href="<?php #echo get_template_directory_uri(); ?>/assets/fonts/Zirkel-Bold.woff" as="font" type="font/woff" crossorigin> -->
@@ -47,7 +61,7 @@
 
 </style>
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css?v23-04-2026.1" />
+<link rel="stylesheet" type="text/css" href="<?php echo esc_url( $theme_uri . '/assets/css/style.css?v23-04-2026.1' ); ?>" />
 
 </head>
 

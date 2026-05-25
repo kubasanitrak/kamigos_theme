@@ -66,35 +66,35 @@
 		--color-bg: transparent;
 		--color-contrast-high: var(--white);
 		@include mq(mq-iP-land) {
-			--color-bg: var(--MYLIFT-blue);
+			--color-bg: var(--kamigos-blue);
 		}
 		.nav-list--lang {
-			color: hsla(var(--MYLIFT-white-hsl), .35);
+			color: hsla(var(--kamigos-white-hsl), .35);
 			transition: color #{$dur}s ease-in-out;
 			li {
 				&:hover,
 				&:active,
 				&:focus,
 				&.current-lang-item {
-					color: hsla(var(--MYLIFT-white-hsl), 1.0);
+					color: hsla(var(--kamigos-white-hsl), 1.0);
 				}
 			}
 		}
 		&.scrolled {
 			--color-bg: var(--white);
-			--color-contrast-high: var(--MYLIFT-blue);
+			--color-contrast-high: var(--kamigos-blue);
 			@include mq(mq-iP-land) {
 				// --color-bg: var(--white);
 			}
 			.nav-list--lang {
 				
-				color: hsla(var(--MYLIFT-blue-hsl), .35);
+				color: hsla(var(--kamigos-blue-hsl), .35);
 				li {
 					&:hover,
 					&:active,
 					&:focus,
 					&.current-lang-item {
-						color: hsla(var(--MYLIFT-blue-hsl), 1.0);
+						color: hsla(var(--kamigos-blue-hsl), 1.0);
 					}
 				}
 			}

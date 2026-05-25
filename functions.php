@@ -34,29 +34,13 @@ function kamigos_theme_title( $title ) {
 /* RESPONSIVE IMG LAZYLOAD RELATED SCRIPTS */
 add_action( 'wp_enqueue_scripts', 'kamigos_theme_scripts' );
 function kamigos_theme_scripts() {
-    wp_register_script('kamigos_theme_lazysizes', get_template_directory_uri() . '/assets/js/libs/lazysizes.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_lazysizes');
-    wp_register_script('kamigos_theme_picturefill', get_template_directory_uri() . '/assets/js/libs/picturefill.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_picturefill');
-    wp_register_script('kamigos_theme_gsap', get_template_directory_uri() . '/assets/js/libs/gsap.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_gsap');
-    wp_register_script('kamigos_theme_scrollTrigger', get_template_directory_uri() . '/assets/js/libs/ScrollTrigger.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_scrollTrigger');
-    // wp_register_script('kamigos_theme_scrollTo', get_template_directory_uri() . '/assets/js/libs/ScrollToPlugin.min.js', array(), '1.0.1', true);
-    // wp_enqueue_script('kamigos_theme_scrollTo');
-
-    /*
-    wp_register_script('kamigos_theme_flickity', get_template_directory_uri() . '/assets/js/libs/flickity.pkgd.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_flickity');
-    wp_register_script('kamigos_theme_gsap-scrollto', get_template_directory_uri() . '/assets/js/libs/ScrollToPlugin.min.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_gsap-scrollto');
-    wp_register_script('kamigos_theme_img-carousel', get_template_directory_uri() . '/assets/js/img-carousel-script.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_img-carousel');
-    wp_register_script('kamigos_theme_store-utility', get_template_directory_uri() . '/assets/js/ci-store-utility-script.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_store-utility');
-    wp_register_script('kamigos_theme_cart-custom-input', get_template_directory_uri() . '/assets/js/cart-custom-input.js', array(), '1.0.1', true);
-    wp_enqueue_script('kamigos_theme_cart-custom-input');
-    */
+    wp_enqueue_script(
+        'kamigos_theme_lazyload',
+        get_template_directory_uri() . '/assets/js/lazyload.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/js/lazyload.js' ),
+        true
+    );
 }
 
 function wp_example_excerpt_length( $length ) {

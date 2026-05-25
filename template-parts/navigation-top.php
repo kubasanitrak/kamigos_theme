@@ -3,7 +3,7 @@
  * Displays top navigation
  *
  * @package WordPress
- * @subpackage kamigos-theme
+ * @subpackage kamigos_theme
  * @since 1.0
  * * @version 1.0
  */

@@ -9,12 +9,9 @@
 
 <!-- PAGE CONTENT -->
 <!-- h2.oops.error404 -->
-		<h2 class="oops error404"><?php _e( 'Ale to je nepříjemné.', 'kamigos-theme' ); ?></h2>
-        <p><?php _e( 'Pro tuto adresu není na těchto stránkách žádný obsah. Prosím zkuste některý z odkazů v hlavním menu.', 'kamigos-theme' ); ?></p>
+		<h2 class="oops error404"><?php esc_html_e( 'Ale to je nepříjemné.', 'kamigos_theme' ); ?></h2>
+        <p><?php esc_html_e( 'Pro tuto adresu není na těchto stránkách žádný obsah. Prosím zkuste některý z odkazů v hlavním menu.', 'kamigos_theme' ); ?></p>
 		
 		</div>
 
 <?php get_footer(); ?>
-
-</body>
-</html>

@@ -57,7 +57,7 @@ html {
 [data-theme="dark"] {
 	--color-primary: var(--white);
 	/* color contrasts */
-	--color-bg: var(--MYLIFT-blue);
+	--color-bg: var(--kamigos-blue);
 	--color-contrast-high: var(--white);
 	--color-labels: var(--white);
 }
@@ -443,7 +443,7 @@ html {
 
   position: sticky;
 	@include mq(mq-land) {
-	  top: calc(100dvh -(100dvh / 4.0 * .8) - var(--pad-T));
+	  top: calc(100dvh - (100dvh / 4.0 * .8) - var(--pad-T));
 	}
 
 }

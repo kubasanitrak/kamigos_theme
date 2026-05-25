@@ -3,7 +3,7 @@
  * Displays newsletter signup form
  *
  * @package WordPress
- * @subpackage kamigos-theme
+ * @subpackage kamigos_theme
  * @since 1.0
  * * @version 1.0
  */
@@ -25,7 +25,7 @@
         <fieldset class="mc_fieldset gdprRequired mc-field-group nl-signup-row" name="interestgroup_field">
 		<label class="checkbox subfield" for="gdpr_12221"><input type="checkbox" id="gdpr_12221" name="gdpr[12221]" value="Y" class="av-checkbox "><span>Email</span> </label>
         </fieldset>
-        <p>Zakliknutím tlačítka výše souhlasíte s naším zpracováním vaší e-mailové adresy, která může být osobním údajem (není jím vždy, podmínkou je, aby vás tato adresa jedinečným způsobem identifikovala). Jiné vaše osobní údaje nechceme a nebudeme zpracovávat.<br>V budoucnu se samozřejmě budete moci z našich newsletterů kdykoliv odhlásit.<br>Děkujeme, že jste s námi a doufáme, že i nadále budete.<br>Blank Theme</p>
+        <p>Zakliknutím tlačítka výše souhlasíte s naším zpracováním vaší e-mailové adresy, která může být osobním údajem (není jím vždy, podmínkou je, aby vás tato adresa jedinečným způsobem identifikovala). Jiné vaše osobní údaje nechceme a nebudeme zpracovávat.<br>V budoucnu se samozřejmě budete moci z našich newsletterů kdykoliv odhlásit.<br>Děkujeme, že jste s námi a doufáme, že i nadále budete.</p>
     </div>
     
     </div>
