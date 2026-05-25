@@ -35,6 +35,10 @@ wp-config.php
 # htaccess
 /.htaccess
 
+__TODO.txt
+
+/assets/fonts/
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
