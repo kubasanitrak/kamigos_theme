@@ -16,7 +16,7 @@ get_header(); ?>
 </style>
 
 <!-- PAGE CONTENT -->
-<?php get_template_part( 'template-parts/logo', 'top' ); ?>
+<?php #get_template_part( 'template-parts/logo', 'top' ); ?>
 
 <div class="content-container">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -25,6 +25,7 @@ get_header(); ?>
 			</div>
 			<div class="content">
 				<?php the_content(); ?>
+				<?php echo do_shortcode('[eab_event_detail]'); ?>
 			</div>
 		<?php endwhile; endif; ?>
 
@@ -32,7 +33,4 @@ get_header(); ?>
 
 <!-- MENU + SOCIAL LINKS -->
 	<?php get_footer(); ?>
-
-
-
 

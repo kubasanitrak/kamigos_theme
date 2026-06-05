@@ -1,7 +1,3 @@
-<?php  ?>
-	<div class="section--footer " data-theme="transparent" >
-		<a id="btn-sosID" data-theme="transparent" class="sos-phonelink" href="tel:00420299140045"><span class="">SOS 24h</span><span class="large-screen-only">+420 299 140 045</span></a>
-	</div>
 
 </div> <!-- END WRAPPER -->
 			
