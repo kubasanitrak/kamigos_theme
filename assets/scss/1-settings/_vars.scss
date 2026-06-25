@@ -1,9 +1,9 @@
 :root {
 	// --pad-T: clamp(1.25rem, 0.9489rem + 0.2273vw, 1.75rem);
 	// --pad-T: clamp(1.25rem, 0.9489rem + 0.2273vw, 2.75rem);
-	--pad-T: calc(16px + (28 - 16) * ((100vw - 320px) / (2560 - 320)));
-	--pad-R: calc(14px + (24 - 14) * ((100vw - 320px) / (2560 - 320)));
-	--gap: calc(14px + (24 - 14) * ((100vw - 320px) / (1920 - 320)));
+	--pad-T: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
+	--pad-R: calc(15px + (20 - 15) * ((100vw - 320px) / (2560 - 320)));
+	--gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
 	--hero-gap: calc(28px + (24 - 28) * ((100vw - 320px) / (2560 - 320)));
 	--fscreen-T: var(--pad-T);
 	--fscreen-R: var(--pad-R);
@@ -61,20 +61,15 @@ $base-T: 0.65;
 
 /* GLOBAL FONT-SIZE */
 // $fz-NAV: calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320)));
-$fz-H1: calc(42px + (72 - 21) * ((100vw - 320px) / (1920 - 320)));
-$fz-H2: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-$fz-H3: $fz-H2;
-$fz-H4: $fz-H2;
-$fz-H5: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-
-// $fz-H5: calc(18px + (21 - 18) * ((100vw - 320px) / (1920 - 320)));
-// $fz-H6: calc(15px + (16 - 15) * ((100vw - 320px) / (1920 - 320)));
-
-// $fz-H5: $fz-H3;
+$fz-H1: calc(60px + (120 - 60) * ((100vw - 320px) / (1920 - 320)));
+$fz-H2: calc(44px + (75 - 44) * ((100vw - 320px) / (1920 - 320)));
+$fz-H3: calc(44px + (50 - 44) * ((100vw - 320px) / (1920 - 320)));
+$fz-H4: $fz-H3;
+$fz-H5: calc(16px + (16 - 16) * ((100vw - 320px) / (1920 - 320)));
 $fz-H6: $fz-H5;
-$fz-PLAIN: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-$fz-MINOR: calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320)));
-$fz-NAV: $fz-H5;
+$fz-PLAIN: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+$fz-MINOR: calc(15px + (15 - 15) * ((100vw - 320px) / (1920 - 320)));
+$fz-NAV: calc(44px + (15 - 44) * ((100vw - 320px) / (1920 - 320)));
 
 /* GLOBAL PADDING */
 $pad-T: var(--pad-T);
@@ -108,16 +103,16 @@ $ham-W: 60px;
 $ham-H: 60px;
 $ham-BGR: pink;
 $ham-C: green;
-$ham-PAD: 16px;
+$ham-PAD: 14px;
 $ham-BAR_STROKE: 2px;
-$ham-BAR_SPACE: 10px;
+$ham-BAR_SPACE: 8px;
 
 
 /* FORM SPECIFIC */
-$bor-RADIUS: 7px;
+$bor-RADIUS: 10vmax;
 
 
-$line-THICK: 2px;
+$line-THICK: 1px;
 $stroke-WIDTH: 1px;
 $border-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
 

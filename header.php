@@ -69,8 +69,8 @@ $theme_uri = get_template_directory_uri();
 	<script> document.body.className="js";</script>
 
 	<div class="header" id="headerID">
-		<div class="logo-container" style="--logo-ratio: 1/1;">
-			<div class="svg-container logo" id="logoID" style="--aspect-ratio: 1;">
+		<div class="logo-container" style="--logo-ratio: 800/212;">
+			<div class="svg-container logo" id="logoID" style="--aspect-ratio: 800/212;">
 				<!-- LOGO SVG -->
 				<?php get_template_part( 'template-parts/logo', 'top' ); ?>
 				<!-- LOGO SVG -->

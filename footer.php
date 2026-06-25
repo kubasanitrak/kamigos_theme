@@ -1,4 +1,74 @@
 
+<div class="section scroll-trigger scroll-trigger--foter section-footer">
+	<div class="section-footer--row">
+		<div class="section-footer--col section-footer--col_logo">
+			<!-- LOGO -->
+		</div>
+		<div class="section-footer--col section-footer--col_nav">
+			<div class="menu">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'main-menu',
+						'container' => '',
+						'menu_class' => 'foot-nav-list nav-list list-none',
+					 ) );
+				?>
+			</div>
+			
+		</div>
+	</div>
+	<div class="section-footer--row">
+		<div class="section-footer--col">
+			<!-- WIDGET GET IN TOUCH -->
+			<?php
+				if ( is_active_sidebar( 'getintouch-widget-area' ) ) :
+					dynamic_sidebar( 'getintouch-widget-area' );
+				endif;
+			?>
+		</div>
+		<div class="section-footer--col">
+			<!-- WIDGET FOLLOW US -->
+			<?php
+				if ( is_active_sidebar( 'followus-widget-area' ) ) :
+					dynamic_sidebar( 'followus-widget-area' );
+				endif;
+			?>
+		</div>
+	</div>
+	<div class="section-footer--row">
+		<div class="section-footer--col section-footer--col_log-in-out">
+			<?php do_shortcode('[login_logout_link]'); ?>
+		</div>
+
+		<div class="section-footer--col section-footer--col_newsletter">
+			<!-- WIDGET NEWSLETTER -->
+			<?php
+				if ( is_active_sidebar( 'nl-widget-area' ) ) :
+					dynamic_sidebar( 'nl-widget-area' );
+				endif;
+			?>
+		</div>
+	</div>
+	<div class="section-footer--row border-T">
+		<div class="section-footer--col section-footer--col_nav">			
+			<?php				
+				wp_nav_menu( array(
+					'theme_location' => 'footer-menu',
+					'container' => '',
+					'menu_class' => 'foot-nav-list nav-list list-none',
+				 ) );
+			?>
+		</div>
+		<div class="section-footer--col">
+			<?php 
+				$CURR_YEAR = date('Y');
+			?>
+			<p class="copyright">©&nbsp;<?php echo strval($CURR_YEAR); ?>&nbsp;<?php echo get_bloginfo( 'name' ); ?></p>
+		</div>
+		
+	</div>
+
+</div>
 </div> <!-- END WRAPPER -->
 			
 		<script>

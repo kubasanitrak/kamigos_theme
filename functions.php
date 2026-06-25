@@ -1,7 +1,7 @@
 <?php
 add_action( 'after_setup_theme', 'kamigos_theme_setup' );
 function kamigos_theme_setup() {
-	load_theme_textdomain( 'kamigos_theme', get_template_directory() . '/languages' );
+	// load_theme_textdomain( 'kamigos_theme', get_template_directory() . '/languages' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -9,10 +9,11 @@ function kamigos_theme_setup() {
 	if ( ! isset( $content_width ) ) $content_width = 640;
 
 	register_nav_menus( array(
-		'main-menu'    => __( 'Hlavni Menu', 'kamigos_theme' ),
+		'main-menu'    => __( 'Main Menu', 'kamigos_theme' ),
+		'footer-menu'    => __( 'Footer Menu', 'kamigos_theme' ),
 		// 'lang-menu'    => __( 'Languages Switch', 'kamigos_theme' ),
-		'social-link' => __( 'Social links', 'kamigos_theme' ),
-		// 'index-menu'    => __( 'Index Menu', 'kamigos_theme' ),
+		'follow-us' => __( 'Follow us', 'kamigos_theme' ),
+		// 'get-in-touch' => __( 'Ozvete se', 'kamigos_theme' ),
 	) );
 }
 
@@ -75,31 +76,44 @@ function kamigos_theme_widgets_init() {
 
 	register_sidebar( 
 		array_merge(
+			// $shared_args,
+			array (
+				'name' => __( 'Get In Touch', 'kamigos_theme' ),
+				'id' => 'getintouch-widget-area',
+				'before_widget' => ' ',
+				'after_widget'  => ' ',
+				'before_title' => '<h3 class="widget-title caps">',
+				'after_title' => '</h3>',
+			)
+		)
+	);
+	register_sidebar( 
+		array_merge(
+			// $shared_args,
+			array (
+				'name' => __( 'Follow us', 'kamigos_theme' ),
+				'id' => 'followus-widget-area',
+				'before_widget' => ' ',
+				'after_widget'  => ' ',
+				'before_title' => '<h3 class="widget-title caps">',
+				'after_title' => '</h3>',
+			)
+		)
+	);
+	register_sidebar( 
+		array_merge(
 			$shared_args,
 			array (
-				'name' => __( 'Footer', 'kamigos_theme' ),
-				'id' => 'footer-widget-area',
+				'name' => __( 'Newsleter', 'kamigos_theme' ),
+				'id' => 'nl-widget-area',
 				// 'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 				// 'after_widget' => "</li>",
-				// 'before_title' => '<h3 class="widget-title">',
+				// 'before_title' => '<h3 class="widget-title caps">',
 				// 'after_title' => '</h3>',
 			)
 		)
 	);
 	/*
-	register_sidebar( 
-		array_merge(
-			$shared_args,
-			array (
-				'name' => __( 'Rezervace', 'kamigos_theme' ),
-				'id' => 'rezervace-widget-area',
-				// 'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-				// 'after_widget' => "</li>",
-				// 'before_title' => '<h3 class="widget-title">',
-				// 'after_title' => '</h3>',
-			)
-		)
-	);
 	*/
 }
 function kamigos_theme_custom_pings( $comment ) {
@@ -159,6 +173,8 @@ function register_acf_blocks() {
         // wp_register_script( $file_name, get_stylesheet_directory_uri() . '/blocks/' . $file_name . '/' . $file_name . '.js', '', $GLOBALS['version']);
         wp_register_script( $file_name, get_stylesheet_directory_uri() . '/blocks/' . $file_name . '/' . $file_name . '.js', '');
     }
+
+    
 }
 // REMOVE INNER DIV WRAPPER INSIDE ACF-BLOCKS
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
@@ -299,3 +315,18 @@ add_filter(
 /* END WORKAROUND WP NASTY BUG PREPENDING AUTO TO SIZES ATTR */
 /* / — / — / — / —  / — / — / — / — / — / – / — / — / — / — / – */
 /* / — / — / — / —  / — / — / — / — / — / – / — / — / — / — / – */
+
+
+
+function kamigos_login_logout_shortcode() {
+	if ( is_user_logged_in() ) {
+		$link = wp_logout_url( home_url() );
+		$text = __( 'Odhlásit se z účtu', 'kamigos_theme' );
+	} else {
+		$link = wp_login_url( get_permalink() );
+		$text = __( 'Přihlásit se k účtu', 'kamigos_theme' );
+	}
+
+	return '<div class="wp-block-button is-style-filled button"><a class="wp-block-button__link wp-element-button" href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a></div>';
+}
+add_shortcode( 'login_logout_link', 'kamigos_login_logout_shortcode' );

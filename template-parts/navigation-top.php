@@ -22,7 +22,7 @@
 	wp_nav_menu( array(
 		'theme_location' => 'main-menu',
 		'container' => '',
-		'menu_class' => 'main-nav-list nav-list list-none accord',
+		'menu_class' => 'main-nav-list nav-list list-none',
 	 ) );
 	/* LOGIN / LOGOUT BTN */
 ?>
