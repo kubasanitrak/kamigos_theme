@@ -12,7 +12,7 @@
 	display: none;
 	visibility: hidden;
 }
-
+.menu,
 .list-none >li {
 	list-style: none;
 }
@@ -94,6 +94,7 @@
 .border-B {
 	position: relative;
 }
+
 .border-T::before,
 .border-B::after {
 	content: "";
@@ -141,4 +142,12 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+.desktop-hide {
+	visibility: visible;
+	display: initial;
+	@include mq(mq-land) {
+		visibility: hidden;
+		display: none;
+	}
 }

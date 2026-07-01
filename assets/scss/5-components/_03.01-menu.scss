@@ -1,11 +1,9 @@
-.menu {
+.menu-container {
 	display: flex;
 	flex-direction: column;
-	// justify-content: center;
-
-	
+	justify-content: center;
+	align-items: center;
 	padding-top: 0;
-	
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -14,16 +12,15 @@
 	overflow: hidden;
 	width: 100%;
 	transition: all 0.65s;
-	background-color: var(--color-bg);
 	height: 0;
+
 	
 	@include mq(mq-land) {
 		flex-direction: row;
-		justify-content: center;
-		// position: relative;
-		// height: calc(#{$fz-NAV} + #{$nav-GAP} * 0.6 );
-// background-color: pink;
+		justify-content: flex-end;
+		overflow: initial;
 		align-items: center;
+		padding-inline: var(--pad-R);
 	}
 	@include mq(mq-iPad-land) {
 	}
@@ -33,7 +30,7 @@
 		font-size: $fz-NAV;
 		display: flex;
 		color: var(--color-contrast-high);
-		gap: var(--gap);
+		
 		flex-direction: column;
 		width: 100%;
 		@include mq(mq-land) {
@@ -61,8 +58,46 @@
 			}
 		}	
 		&.main-nav-list	{
+			// display: flex;
+			// flex-direction: column;
+			padding-inline: var(--pad-R);
 			@include mq(mq-land) {
-				margin-right: calc(var(--pad-R) * 3);
+				padding-inline: var(--pad-R) calc(var(--gap) * 2);
+			}
+			@include mq(mq-land) {
+				gap: calc(var(--gap) * 2);
+				flex-direction: row;
+				text-transform: uppercase;
+				font-size: $fz-NAV-LAND;
+				// margin-right: calc(var(--pad-R) * 3);
+			}
+			li {
+				border-top: $line-THICK solid var(--color-contrast-high);
+				&:last-of-type {
+					border-bottom: $line-THICK solid var(--color-contrast-high);
+					@include mq(mq-land) {
+						border: none;
+					}
+				}
+				@include mq(mq-land) {
+					border: none;
+				}
+				a {
+					line-height: 1.3em;
+					@include mq(mq-land) {
+						// padding: .3em 0 .4em;
+					}
+				}
+			}
+		}
+
+
+
+		&.sub-nav-list	{
+			font-size: $fz-PLAIN;
+			@include mq(mq-land) {
+				display: none;
+				visibility: hidden;
 			}
 		}
 		&.nav-list--lang {
@@ -88,11 +123,36 @@
 			}
 		}
 	}
+	.submenu {
+		display: flex;
+		flex-direction: column;
+		gap: var(--gap);
+		position: absolute;
+		bottom: calc(var(--pad-T) * 3);
+		@include mq(mq-land) {
+			position: relative;
+			bottom: 0;
+		}
+		.btn {
+			@include mq(mq-land) {
+				padding: .3em var(--btn-pad-R, 1.25em) .38em;
+			}
+		}
+
+
+		// margin-top: auto;
+	}
+}
+.foot-nav-list {
+	column-count: 2;
+	@include mq(mq-land) {
+		column-count: 1;
+	}
 }
 
 
-.menu li:hover,
-.menu li:focus,
-.menu li.current {
+.menu-container li:hover,
+.menu-container li:focus,
+.menu-container li.current {
 	cursor: pointer;
 }

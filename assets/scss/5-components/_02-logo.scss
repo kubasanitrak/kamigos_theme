@@ -2,13 +2,22 @@
 	// height: var(--logo-H);
 	
 	position: absolute;
-	top: var(--pad-T);
+	top: calc(var(--pad-T) * 3);
 	left: var(--pad-R);
 	z-index: 50;
+	@include mq(mq-land) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 .logo {
-	width: calc(var(--logo-H) * var(--logo-ratio));
+
+	width: calc((100vw - (var(--pad-R) * 2)) / 3);
+	@include mq(mq-land) {
+		width: calc(var(--logo-H) * var(--aspect-ratio));
+	}
 	svg {
 		fill: var(--color-contrast-high);
 	}

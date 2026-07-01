@@ -16,7 +16,7 @@
 <label for="menuBtnID" class="hamburger hamburger--htx desktop-hide">
 	<span>menu</span>
 </label>
-<div class="menu">
+<div class="menu-container">
 	<?php
 	
 	wp_nav_menu( array(
@@ -24,6 +24,17 @@
 		'container' => '',
 		'menu_class' => 'main-nav-list nav-list list-none',
 	 ) );
-	/* LOGIN / LOGOUT BTN */
 ?>
+	<div class="submenu">
+	<?php
+		wp_nav_menu( array(
+			'theme_location' => 'follow-us',
+			'container' => '',
+			'menu_class' => 'nav-list sub-nav-list list-none desktop-hide',
+		 ) );
+	?>
+		<!-- LOGIN / LOGOUT BTN -->
+		<!-- <a href="#" class="btn btn-outline hover-bgr caps">Přihlásit se</a> -->
+		<?php echo do_shortcode('[login_logout_link]'); ?>
+	</div>
 </div>

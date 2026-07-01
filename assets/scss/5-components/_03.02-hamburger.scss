@@ -4,7 +4,8 @@
 .hamburger {
 	display: block;
 	position: absolute;
-	top: var(--pad-T);
+	top: calc( (var(--pad-T) * 3) - (#{$ham-H} * .25));
+	// top: calc( (var(--pad-T) * 3));
 	right: 0;
 	z-index: 2;
 	overflow: hidden;
@@ -16,6 +17,7 @@
 	cursor: pointer;
 	
 	background-color: transparent;
+	// background-color: pink;
 }
 
 .hamburger span {
@@ -24,15 +26,17 @@
 	left: 50%;
 	z-index: 1;
 	transform: translate(-50%, -50%);
+	width: calc(100% - (#{$ham-PAD} * 2));
+	// left: $ham-PAD;
+
+	// right: $ham-PAD;
 
 	&,	
 	&::before,
 	&::after {
 		position: absolute;
 		display: block;
-		width: var(--dot-R);
-		height: var(--dot-R);
-		border-radius: 50%;
+		height: $ham-BAR_STROKE;
 		background-color: var(--color-contrast-high);
 	}
 	&::before,
@@ -40,6 +44,7 @@
 		content: "";
 		z-index: 2;
 		left: 0;
+		right: 0;
 	}
 }
 
@@ -61,15 +66,17 @@
 	bottom: 0;
 }
 
-.nav-switch:checked ~ label ~ .menu {
+.nav-switch:checked ~ label ~ .menu-container {
 	padding-top: calc( (#{$fz-NAV} * 2.0));
 	cursor: pointer;
 	height: calc( (#{$fz-NAV} + #{$nav-GAP} * 2) * 7); //3 = NUMBER OF .menu > li ITEMS
+	height: 100vh;
+	height: 100dvh;
 	
-	@include mq(mq-land) {
-		padding-top: 0;
-		height: calc((var(--logo-H)) + (var(--pad-T) * 2.0) );
-	}
+	// @include mq(mq-land) {
+	// 	padding-top: 0;
+	// 	height: calc((var(--logo-H)) + (var(--pad-T) * 2.0) );
+	// }
 	@include mq(mq-iPad-land) {
 	}
 }

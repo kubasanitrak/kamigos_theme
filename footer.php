@@ -3,6 +3,13 @@
 	<div class="section-footer--row">
 		<div class="section-footer--col section-footer--col_logo">
 			<!-- LOGO -->
+			<div class="logo-container" style="--logo-ratio: 800/212;">
+				<div class="svg-container logo" id="logoID" style="--aspect-ratio: 800/212;">
+					<!-- LOGO SVG -->
+					<?php get_template_part( 'template-parts/logo', 'top' ); ?>
+					<!-- LOGO SVG -->
+				</div>
+			</div>
 		</div>
 		<div class="section-footer--col section-footer--col_nav">
 			<div class="menu">
@@ -17,8 +24,8 @@
 			
 		</div>
 	</div>
-	<div class="section-footer--row">
-		<div class="section-footer--col">
+	<div class="section-footer--row section-footer--row_cols">
+		<div class="section-footer--col section-footer--col_50 border-T">
 			<!-- WIDGET GET IN TOUCH -->
 			<?php
 				if ( is_active_sidebar( 'getintouch-widget-area' ) ) :
@@ -26,7 +33,7 @@
 				endif;
 			?>
 		</div>
-		<div class="section-footer--col">
+		<div class="section-footer--col section-footer--col_50 border-T">
 			<!-- WIDGET FOLLOW US -->
 			<?php
 				if ( is_active_sidebar( 'followus-widget-area' ) ) :
@@ -37,7 +44,7 @@
 	</div>
 	<div class="section-footer--row">
 		<div class="section-footer--col section-footer--col_log-in-out">
-			<?php do_shortcode('[login_logout_link]'); ?>
+			<?php echo do_shortcode('[login_logout_link]'); ?>
 		</div>
 
 		<div class="section-footer--col section-footer--col_newsletter">
@@ -404,8 +411,8 @@
 			})();
 		</script>
 
-		<script type="module">
-	        import { init } from '<?php echo get_template_directory_uri(); ?>/assets/js/lite-light.min.js';
+		<!-- <script type="module">
+	        import { init } from '<?php #echo get_template_directory_uri(); ?>/assets/js/lite-light.min.js';
 	
 	        	init({
 				    imageSelector: '.lightbox',     // CSS selector for images
@@ -414,7 +421,7 @@
 				    fadeAnimationDuration: 200              // Animation duration (ms)
 				});
 	    </script>
-
+ -->
 	
 
 	 <!-- START WP_FOOTER() -->

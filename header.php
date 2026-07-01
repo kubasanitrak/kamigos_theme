@@ -63,13 +63,17 @@ $theme_uri = get_template_directory_uri();
 
 <link rel="stylesheet" type="text/css" href="<?php echo esc_url( $theme_uri . '/assets/css/style.css?v23-04-2026.1' ); ?>" />
 
+
+<?php 
+	$DATA_THEME = get_field('data-theme') ? get_field('data-theme') : 'default';
+?>
 </head>
 
 <body>
 	<script> document.body.className="js";</script>
 
-	<div class="header" id="headerID">
-		<div class="logo-container" style="--logo-ratio: 800/212;">
+	<div class="header" id="headerID" data-theme="<?php echo $DATA_THEME; ?>">
+		<div class="logo-container" >
 			<div class="svg-container logo" id="logoID" style="--aspect-ratio: 800/212;">
 				<!-- LOGO SVG -->
 				<?php get_template_part( 'template-parts/logo', 'top' ); ?>
@@ -82,4 +86,4 @@ $theme_uri = get_template_directory_uri();
 		<!-- NAVIGATION TOP -->
 	</div> <!-- END DIV CLASS HEADER -->
 
-	<div class="wrapper loading" id="wrapper-id" data-theme="default">
+	<div class="wrapper loading" id="wrapper-id" data-theme="<?php echo $DATA_THEME; ?>">

@@ -1,21 +1,56 @@
-button{
+input[type="submit"],
+button {
+	display: inline-block;
+	background-image: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
 	box-shadow: none;
-	border-radius: 0;
-	cursor: pointer;
-	border: none;
-	&:focus{
+	text-shadow: none;
+}
+input[type="submit"],
+.btn,	
+button{
+	&:active,
+	&:focus,
+	&:target,
+	&:focus-visible,
+	&:focus-within {
+		cursor: pointer;
 		outline:0;
 	}
+	-webkit-appearance: none;
+}
 
-	display: inline-block;
-	padding: calc(#{$pad-T} * 0.3) calc(#{$pad-L} * 0.3);
-	background: #eee;
-	border: none;
-	border-radius: $bor-RADIUS;
-	background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-	color: #222;
-	font-family: sans-serif;
-	font-size: 16px;
-	text-shadow: 0 1px #fff;
-	cursor: pointer;
+
+// buttony
+.btn {
+	&:not(.btn-icon) {
+		display: inline-block;
+	}
+	&-circ {}
+	&-oval {
+		border-radius: $bor-RADIUS;
+		&:not(.btn-icon) {
+			padding: .7em calc(var(--btn-pad-R) * 3) .8em;
+			// min-width: 20em;
+			@include mq(mq-land) {
+				padding: .7em var(--btn-pad-R, 2em) .8em;
+				// min-width: initial;
+			}
+		}
+	}
+	&-icon {
+		// position: absolute;
+		// right: .8em;
+		display: flex;
+		padding: .8em .8em .8em;
+		@include mq(mq-land) {
+			// position: relative;
+			// min-width: initial;
+		}
+	}
+	&-outline {
+		border: $line-THICK solid var(--color-contrast-high);
+	}
 }

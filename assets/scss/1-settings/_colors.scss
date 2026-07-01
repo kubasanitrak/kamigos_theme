@@ -12,6 +12,19 @@ $active-C: blue;
 	--gray4: hsla(0, 0%, 72%, 1);
 	--color-primary: var(--gray1);
 
+	--kami-ochre-hsl: 39deg, 66%, 50%;
+	--kami-ochre: hsla(var(--kami-ochre-hsl), 1.0); // #D49A2D
+	--kami-silky-blue-hsl: 209deg, 100%, 92%;
+	--kami-silky-blue: hsla(var(--kami-silky-blue-hsl), 1.0); // #D5EBFF
+	--kami-dark-green-hsl: 175deg, 100%, 23%;
+	--kami-dark-green: hsla(var(--kami-dark-green-hsl), 1.0); // #00766C
+	--kami-blue-hsl: 214deg, 74%, 52%;
+	--kami-blue: hsla(var(--kami-blue-hsl), 1.0); // #2A79DF
+	--kami-off-white-hsl: 24deg, 33%, 97%;
+	--kami-off-white: hsla(var(--kami-off-white-hsl), 1.0); // #FAF7F5
+	--kami-lavender-hsl: 287deg, 26%, 59%;
+	--kami-lavender: hsla(var(--kami-lavender-hsl), 1.0); // #A67CB2
+
 	--kamigos-white-hsl: 0deg, 100%, 100%;
 	--white: hsla(var(--kamigos-white-hsl), 1.0);
 
@@ -24,10 +37,10 @@ $active-C: blue;
 	--corp-c-4: hsla(357, 89%, 35%, 1); //
 
 	/* color contrasts */
-	--color-bg: var(--white);
-	--menu-bg: var(--white);
+	--color-bg: var(--kami-off-white);
+	
 	--color-contrast-high: var(--black);
-	--color-highlight: var(--kamigos-blue);
+	--color-highlight: var(--kami-ochre);
 	--color-labels: var(--black);
 	
 }

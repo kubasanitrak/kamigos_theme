@@ -2,3 +2,31 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+.menu a,
+.section-footer--col a,
+.main-nav-list a,
+.foot-nav-list a {
+	// &,
+	&:not(.btn),
+	&.hover-underline {
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: $underline-size;
+			background-color: var(--color-contrast-high);
+		}
+		&:active::after,
+		&:focus::after,
+		&:focus-within::after,
+		&:hover::after,
+		&:focus::after {
+		}
+	}
+}

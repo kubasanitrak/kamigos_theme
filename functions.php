@@ -82,8 +82,8 @@ function kamigos_theme_widgets_init() {
 				'id' => 'getintouch-widget-area',
 				'before_widget' => ' ',
 				'after_widget'  => ' ',
-				'before_title' => '<h3 class="widget-title caps">',
-				'after_title' => '</h3>',
+				'before_title' => '<h5 class="widget-title caps">',
+				'after_title' => '</h5>',
 			)
 		)
 	);
@@ -95,8 +95,8 @@ function kamigos_theme_widgets_init() {
 				'id' => 'followus-widget-area',
 				'before_widget' => ' ',
 				'after_widget'  => ' ',
-				'before_title' => '<h3 class="widget-title caps">',
-				'after_title' => '</h3>',
+				'before_title' => '<h5 class="widget-title caps">',
+				'after_title' => '</h5>',
 			)
 		)
 	);
@@ -321,12 +321,12 @@ add_filter(
 function kamigos_login_logout_shortcode() {
 	if ( is_user_logged_in() ) {
 		$link = wp_logout_url( home_url() );
-		$text = __( 'Odhlásit se z účtu', 'kamigos_theme' );
+		$text = __( 'Odhlásit se', 'kamigos_theme' );
 	} else {
 		$link = wp_login_url( get_permalink() );
-		$text = __( 'Přihlásit se k účtu', 'kamigos_theme' );
+		$text = __( 'Přihlásit se', 'kamigos_theme' );
 	}
 
-	return '<div class="wp-block-button is-style-filled button"><a class="wp-block-button__link wp-element-button" href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a></div>';
+	return '<a class="btn btn-outline btn-oval hover-bgr caps" href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a>';
 }
 add_shortcode( 'login_logout_link', 'kamigos_login_logout_shortcode' );

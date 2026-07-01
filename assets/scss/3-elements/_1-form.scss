@@ -7,29 +7,33 @@ form {
 
 		// Looks like placeholder
 		> label {
-			opacity: 0.3;
-			position: absolute;
-			top: 0.55em;
-			left: $pad-L;
-			@include transition(opacity);
+			// opacity: 0.3;
+			// position: absolute;
+			// top: 0.55em;
+			// left: $pad-L;
+			// @include transition(opacity);
 		}
 
-		> input[type="email"] {
-			
-		
-			&:focus {
-				background-color: #EEE;
+		input[type="text"],
+		input[type="number"],
+		input[type="phone"],
+		input[type="email"] {
+			&:active,
+			&:focus,
+			&:focus-visible,
+			&:focus-within {
+				background-color: var(--color-bg);
 				& + label {
 					opacity: 0;
 				}
 			}
 		// show success!
 			&:valid {
-				// background: url(../images/check.svg);
-				background: red;
+				background: var(--color-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='m8.494 16.432-1.007-1.007-1.369-1.369L2 9.938l2.376-2.376 4.118 4.118 6.562-6.562 2.376 2.376-6.562 6.562z'/%3E%3C/svg%3E") center center no-repeat;
+				// background: red;
 				background-size: 20px;
 				background-repeat: no-repeat;
-				background-position: 20px 20px;
+				background-position: calc(100% - var(--pad-R)) 50%;
 
 				// continue to hide the label
 				& + label {
@@ -42,32 +46,82 @@ form {
 		form-sizing: normal;
 	}
 
+	
+	input[type="text"],
+	input[type="number"],
+	input[type="phone"],
 	input[type="email"],
+	input[type="submit"],
 	button {
 		width: 100%;
 		display: block;
-		padding: calc(#{$pad-T} * 0.3) calc(#{$pad-L} * 0.3);
-		line-height: 130%;
-		margin-bottom: $pad-T;
-		@include mq(mq-L-UP) {
-			display: inline-block;
-			// margin-bottom: 0;
+		// padding: .7em var(--btn-pad-R, 2em) .8em;
+		padding-block: calc(#{$fz-NAV-LAND} * .7) calc(#{$fz-NAV-LAND} * .8);
+		line-height: calc(#{$fz-NAV-LAND} * 1.3);
+		background-color: transparent;
+		&:not(.btn-outline) {
+			// border: none;
+			outline: none;
 		}
+
+		@include mq(mq-land) {
+			display: inline-block;
+		}
+
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-visible,
+		&:focus-within {
+			outline: none;
+		}
+	}
+	input[type="text"],
+	input[type="number"],
+	input[type="phone"],
+	input[type="email"] {
+		font-size: inherit;
+		border-style: none none solid none;
+		border-color: transparent transparent var(--color-contrast-high) transparent;
+		border-width: $line-THICK;
 	}
 	input[type="email"] {
 		@include mq(mq-L-UP) {
-			width: 65%;
-			max-width: 20em;
+			// width: 65%;
+			// max-width: 20em;
 		}
 	}
+	input[type="submit"],
 	button {
-		margin-left: 0;
-		@include mq(mq-L-UP) {
-			width: 30%;
+		// margin-left: 0;
+		padding-inline: var(--btn-pad-R, 2em);
+		@include mq(mq-land) {
+			// width: 30%;
 			// min-width: 6em;
-			max-width: 10em;
-			margin-bottom: 0;
-			margin-left: $pad-L;
+			// max-width: 10em;
+			// margin-bottom: 0;
+			// margin-left: $pad-L;
 		}
 	}
+}
+
+.sign_up_form-inner {
+  display: flex;
+}
+
+.input-container {
+	font-size: $fz-H5;
+	> * {
+		font-size: inherit;
+	}
+	label {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  left: 0;
+	}
+}
+
+.input-container {
+  // width: 100%;
 }

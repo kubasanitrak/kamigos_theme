@@ -3,6 +3,7 @@
 	// --pad-T: clamp(1.25rem, 0.9489rem + 0.2273vw, 2.75rem);
 	--pad-T: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
 	--pad-R: calc(15px + (20 - 15) * ((100vw - 320px) / (2560 - 320)));
+	--btn-pad-R: 1.5em;
 	--gap: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
 	--hero-gap: calc(28px + (24 - 28) * ((100vw - 320px) / (2560 - 320)));
 	--fscreen-T: var(--pad-T);
@@ -21,7 +22,7 @@
 	--dsalpha-2: 0.0;
 	--maW: 1440;
 
-	--logo-H: calc(42px + (96 - 42) * ((100vw - 320px) / (2560 - 320)));
+	--logo-H: calc(36px + (42 - 36) * ((100vw - 320px) / (2560 - 320)));
 	--header-H: 20vh;
 	--dir-LR: 1;
 
@@ -54,7 +55,7 @@ $cubic3: cubic-bezier(.13,1.5,.61,1.7);
 $cubic4: cubic-bezier(.29,.88,.84,1.1);
 $global-transistion-duration: 0.65s;
 $intro-t: 0.875s;
-$dur: 0.45;
+$dur: 0.35;
 $stagger: 0.15;
 $prlx-dist: 30px;
 $base-T: 0.65;
@@ -63,11 +64,12 @@ $base-T: 0.65;
 // $fz-NAV: calc(24px + (15 - 24) * ((100vw - 320px) / (1920 - 320)));
 $fz-H1: calc(60px + (120 - 60) * ((100vw - 320px) / (1920 - 320)));
 $fz-H2: calc(44px + (75 - 44) * ((100vw - 320px) / (1920 - 320)));
-$fz-H3: calc(44px + (50 - 44) * ((100vw - 320px) / (1920 - 320)));
-$fz-H4: $fz-H3;
-$fz-H5: calc(16px + (16 - 16) * ((100vw - 320px) / (1920 - 320)));
-$fz-H6: $fz-H5;
+$fz-H3: calc(36px + (50 - 36) * ((100vw - 320px) / (1920 - 320)));
+$fz-H4: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320)));
+$fz-H5: calc(18px + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
 $fz-PLAIN: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+$fz-H6: $fz-PLAIN;
+$fz-NAV-LAND: calc(16px + (16 - 16) * ((100vw - 320px) / (1920 - 320)));
 $fz-MINOR: calc(15px + (15 - 15) * ((100vw - 320px) / (1920 - 320)));
 $fz-NAV: calc(44px + (15 - 44) * ((100vw - 320px) / (1920 - 320)));
 
@@ -105,7 +107,7 @@ $ham-BGR: pink;
 $ham-C: green;
 $ham-PAD: 14px;
 $ham-BAR_STROKE: 2px;
-$ham-BAR_SPACE: 8px;
+$ham-BAR_SPACE: 5px;
 
 
 /* FORM SPECIFIC */
@@ -115,6 +117,7 @@ $bor-RADIUS: 10vmax;
 $line-THICK: 1px;
 $stroke-WIDTH: 1px;
 $border-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)));
+$underline-size: 1px;
 
 
 $max-W: 90rem; // MEZI 1440px (90rem) a 1920px = BREAKPOINT

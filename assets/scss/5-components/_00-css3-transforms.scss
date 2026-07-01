@@ -5,23 +5,29 @@
 	transition: transform $global-transistion-duration 0.0s ease-out;
 }
 	
-.menu li {
+.menu-container li {
 	opacity: 0;
 	
 	transition: 
 		/*property	duration	delay */
 		opacity		0.5s 0.3s;
 		
-	@include mq(mq-L-UP) {
-		// opacity: 1;
+	@include mq(mq-land) {
+		opacity: 1;
 	}
 		
 		// @include uni-offset(7, 0.25, opacity, 0.15);
 }
-.nav-switch:checked ~ label ~ .menu li {
-	opacity: 1;
-	// transition-delay: $global-transistion-duration;
-	// @include uni-offset(6, 0.85, opacity, 0.25);
+.nav-switch ~ label ~ .menu-container {
+	background-color: transparent;
+}
+.nav-switch:checked ~ label ~ .menu-container {
+	background-color: var(--menu-bg);
+	li {
+		opacity: 1;
+		// transition-delay: $global-transistion-duration;
+		// @include uni-offset(6, 0.85, opacity, 0.25);
+	}
 }
 
 
@@ -42,6 +48,12 @@
 .hamburger span::after{
 	transition-property: bottom, transform;
 }
+.nav-switch:checked ~ label span::before {
+	transform: rotate(45deg);
+}
+.nav-switch:checked ~ label span::after {
+	transform: rotate(-45deg);
+}
 .nav-switch:checked ~ label span::before,
 .nav-switch:checked ~ label span::after {
 	transition-delay: $global-transistion-duration, $global-transistion-duration;
@@ -58,25 +70,28 @@
 		}
 		.logo,
 		.hamburger span,
-		.menu {
+		.menu-container {
 			transform: translate(0, calc(var(--header-H) * -1));
 		}
 	}
 	.header {
-		--color-bg: transparent;
-		--color-contrast-high: var(--white);
+		background: var(--menu-bg);
+		background-color: var(--menu-bg);
+		// --color-contrast-high: var(--white);
 		@include mq(mq-iP-land) {
-			--color-bg: var(--kamigos-blue);
+			--color-bg: transparent;
+			--menu-bg: transparent;
+			// --color-bg: var(--kamigos-blue);
 		}
 		.nav-list--lang {
-			color: hsla(var(--kamigos-white-hsl), .35);
+			// color: hsla(var(--kamigos-white-hsl), .35);
 			transition: color #{$dur}s ease-in-out;
 			li {
 				&:hover,
 				&:active,
 				&:focus,
 				&.current-lang-item {
-					color: hsla(var(--kamigos-white-hsl), 1.0);
+					// color: hsla(var(--kamigos-white-hsl), 1.0);
 				}
 			}
 		}
@@ -178,60 +193,12 @@
 				}
 			}
 		}
-		&--morph {
-			.shape-morph::before {
-				transition: clip-path calc(#{$global-transistion-duration} * 2) 0.0s $cubic4;
-				clip-path: polygon(100% 0, 0 0, 50% 0);
-			}
-			&::after {
-				transform-origin: center center;
-				transform:  translate(-80%, 10%) scale(0.0);
-				@include mq(mq-land) {
-					transform:  translate(-120%, 50%) scale(0.0);
-				}
-				transition: transform calc(#{$global-transistion-duration} * 3) 0.0s ease-in-out;
-			}
-			.gallery-grid {
-				transition: 
-					transform $intro-t*2 0.0s ease-in-out;
-				transform: translateX(50vw);
-			}
-			.slide-in {
-				opacity: 0;
-				transform: translateX($prlx-dist);
-				@include css-paralax(10, .5, .35, .75); 
-			} 
-			.slide-in--final {}
-			&.inView {
-				.shape-morph::before {
-					clip-path: polygon(100% 0, 0 0, 50% 100%);
-				}	
-				&::after {
-					transform: translate(-50%, -10vmin) scale(1.0);
-					@include mq(mq-land) {
-						transform: translate(-50%, -5vmin) scale(1.0);
-					}
-				}
-				.gallery-grid {
-					transform: translateX(0);
-				}
-				.slide-in {
-					opacity: 1;
-					transform: translateX(0);
-				} 
-				.slide-in--final {
-					transition-delay: $intro-t*4;
-				}
-
-			}
-
-		}
 	}
+		
 	--intro-delay: 0.5s;
 	--stagger-t: .25s;
 
 	.loading {
-
 		
 		.site-title {
 			opacity: 0;
@@ -289,72 +256,83 @@
 		transform: translateY(.3em);
 	}
 
+	.loaded {
+		
+	}
+}
 
-	.sos-phonelink {
-		transition: transform calc(#{$global-transistion-duration} * .3) 0.0s ease-out;
-		transform: translateX(calc(var(--icon-S) * -3));
-		&::before {
-			transition: transform calc(#{$global-transistion-duration} * 0.5) 0.0s $cubic;
-			transform: scale(0.0);
-			transform-origin: center center;
-		}
-		span {
-			text-indent: calc(var(--paralax-X) * -1);
-			opacity: 0;
-			transition:
-				text-indent calc(#{$global-transistion-duration} * 1.25) 0.0s $cubic,
-				opacity calc(#{$global-transistion-duration} * .5) 0.0s ease-out,
-				margin calc(#{$global-transistion-duration} * .5) 0.0s ease-out;
+
+.btn {
+	&-circ {
+
+	}
+	&-oval {
+	}
+	&-icon {
+
+	}
+	&-outline {
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-within {
+			border-color: var(--btn-highlight);
 		}
 	}
-	.loaded {
-		.sos-phonelink {
+	transition:
+		color #{$dur}s ease-in-out,
+		background-color #{$dur}s ease-in-out,
+		border-color #{$dur}s ease-in-out;
+	&.hover-bgr {
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-within {
+			background-color: var(--btn-highlight);
+		}
+	}
+}
+.menu a,
+.section-footer--col a,
+.main-nav-list a,
+.foot-nav-list a {
+	&,
+	&:not(.btn),
+	&.hover-underline {
+		&::after {
+			transform: translateX(-100%);
+			transition: transform #{$dur}s;
+		}
+		&:active::after,
+		&:focus::after,
+		&:focus-within::after,
+		&:hover::after,
+		&:focus::after {
+			// transform: translateX(0, 0.2em, 0);
 			transform: translateX(0);
-			transition-delay: calc( var(--intro-delay) * 1.00);
-			&::before {
-				transform: scale(1.0);
-				transition-delay: calc(#{$global-transistion-duration} * .25 + var(--intro-delay));
-			}
-			span {
-				text-indent: 0;
-				opacity: 1;
-				margin-left: calc(var(--gap) * .5);
-				transition-delay: 
-					calc(#{$global-transistion-duration} *  0.25 + var(--intro-delay)), 
-					calc(#{$global-transistion-duration} * .85 + var(--intro-delay)),
-					calc(#{$global-transistion-duration} * .5 + var(--intro-delay));
-				&:first-of-type {
-					margin-right: calc(var(--gap) * .75);
-					@include mq(mq-land) {
-						margin-right: 0;
-					}
-				}
-				&:last-of-type {
-					@include mq(mq-land) {
-						margin-right: calc(var(--gap) * .75);
-					}
-				}
-			}
-			&.scroll-minified {
-				// gap: 0;
-				span {
-					text-indent: calc(var(--paralax-X) * -1);
-					opacity: 0;
-					margin-left: 0;
-					transition:
-						text-indent calc(#{$global-transistion-duration} * 5.25) calc(#{$global-transistion-duration} *  0.25) $cubic,
-						opacity calc(#{$global-transistion-duration} * .25) 0.0s ease-out,
-						margin calc(#{$global-transistion-duration} * .5) 0.0s ease-out;
-					&:first-of-type {
-						margin-right: 0;
-					}
-					&:last-of-type {
-						@include mq(mq-land) {
-							margin-right: 0;
-						}
-					}
-				}
-			}
+		}
+	}
+}
+.cta-item--link {
+	.cta-label {
+		transition:
+			transform #{$dur}s ease-in-out;
+	}
+	.icon {
+		transition:
+			background-color #{$dur}s ease-in-out,
+			border-color #{$dur}s ease-in-out;
+	}
+	&:hover,
+	&:active,
+	&:focus,
+	&:focus-within {
+		.cta-label {
+			transform: rotate(-3deg);
+		}
+		.icon {
+			border-color: var(--color-highlight);
+			background-color: var(--color-highlight);
 		}
 	}
 }
