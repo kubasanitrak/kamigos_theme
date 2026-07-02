@@ -27,7 +27,7 @@ get_header(); ?>
 			</div> -->
 
 			<!-- div.section.section-header.full-width.split-cols>.split-cols--item*2 -->
-			<div class="section section-header full-bleed split-cols" data-theme="ochre">
+			<div class="section section-header full-bleed split-cols full-H" data-theme="ochre">
 				<div class="split-cols--item">
 					<!-- 
 					h1.section-header--title
@@ -41,10 +41,18 @@ get_header(); ?>
 				<div class="split-cols--item carousel">
 					<div class="carousel-item carousel-item--img_container">
 						<!-- <img decoding="async" data-src="" data-srcset="" sizes="auto"> -->
-						<img decoding="async" src="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="eab-card__img" alt="" loading="lazy" srcset="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
+						<img decoding="async" src="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
 					</div>
 				</div>
 			</div>
+
+				
+
+		<?php endif; ?>
+
+		<!-- <div class="section section-content"> -->
+			<?php the_content(); ?>
+
 
 			<div class="section section-offer full-width" data-theme="silky-blue">
 				<h5 class="section-headline caps border-B">Tréninky</h5>
@@ -64,13 +72,33 @@ get_header(); ?>
 						</a>
 					</div>
 				</div>
-				
 			</div>
-
-		<?php endif; ?>
-
-		<!-- <div class="section section-content"> -->
-			<?php the_content(); ?>
+			<div class="section section-about full-width" data-theme="default">
+				<h5 class="section-headline caps border-B">Kdo jsme</h5>
+				<div class="split-cols">
+					<div class="split-cols--item split-cols--item_img">
+						<div class="split-cols--img">
+							<img decoding="async" src="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
+						</div>
+					</div>
+					<div class="split-cols--item split-cols--item_caption">
+						<h5 class="">Jsme beach kolektiv, který tvoří trenéři, zkušení hráči a sportovní nadšenci. Hrajeme, trénujeme a pořádáme akce pro děti i dospělé všech úrovní. A přitom nepočítáme jen body a vítězství. Jde o pohyb, který vás rozvíjí a dává vám větší sebejistotu. O prostředí, kde se cítíte dobře. A o lidi, kteří se navzájem inspirují na hřišti i mimo něj.</h5>
+					</div>
+				</div>
+				<div class="section-row section-row--cta">
+					<a href="#" class="btn btn-oval btn-outline caps hover-bgr hover-bgr--ochre">Zjistit víc</a>
+				</div>
+			</div>
+			
+			<div class="section section-join full-width" data-theme="silky-blue">
+				<!-- h4.section-join--title -->
+				<h4 class="section-join--title">Přidejte se ke kamigos</h4>
+				<div class="section-join--cta">
+					<a href="#" class="btn btn-oval btn-fill caps">Registrovat se</a>
+					<p class="plain">Už máte účet?</p>
+					<a href="#" class="textlink textlink-underline">Přihlaste se</a>
+				</div>
+			</div>
 		<!-- </div> -->
 		<!-- END SECTION CONTENT -->
 		

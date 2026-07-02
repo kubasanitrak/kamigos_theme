@@ -27,6 +27,7 @@ a {
 		&:focus-within::after,
 		&:hover::after,
 		&:focus::after {
+			outline: none;
 		}
 	}
 }

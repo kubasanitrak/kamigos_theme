@@ -97,7 +97,8 @@
 		}
 		&.scrolled {
 			--color-bg: var(--white);
-			--color-contrast-high: var(--kamigos-blue);
+			// --menu-bg: var(--kami-off-white);
+			// --color-contrast-high: var(--kamigos-blue);
 			@include mq(mq-iP-land) {
 				// --color-bg: var(--white);
 			}
@@ -333,6 +334,39 @@
 		.icon {
 			border-color: var(--color-highlight);
 			background-color: var(--color-highlight);
+		}
+	}
+}
+
+.hover-bgr--ochre {
+	--btn-highlight: var(--kami-ochre);
+}
+
+.eab-card  {
+	.icon {
+		transition:
+			background-color #{$dur}s ease-in-out,
+			border-color #{$dur}s ease-in-out;
+	}
+	.eab-card__media {
+		transform: rotate(0deg);
+		transition:
+			transform #{$dur}s ease-in-out;
+		img {}
+	}
+	&:hover,
+	&:active,
+	&:focus,
+	&:focus-within {
+		outline: none;
+		.icon {
+			outline: none;
+			border-color: var(--color-highlight);
+			background-color: var(--color-highlight);
+		}
+		.eab-card__media {
+			outline: none;
+			transform: rotate(-3deg);
 		}
 	}
 }

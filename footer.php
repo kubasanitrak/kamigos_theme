@@ -17,7 +17,7 @@
 					wp_nav_menu( array(
 						'theme_location' => 'main-menu',
 						'container' => '',
-						'menu_class' => 'foot-nav-list nav-list list-none',
+						'menu_class' => 'foot-nav-list cols-2 nav-list list-none',
 					 ) );
 				?>
 			</div>

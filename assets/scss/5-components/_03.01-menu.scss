@@ -144,9 +144,11 @@
 	}
 }
 .foot-nav-list {
-	column-count: 2;
-	@include mq(mq-land) {
-		column-count: 1;
+	&.cols-2 {
+		column-count: 2;
+		@include mq(mq-land) {
+			column-count: 1;
+		}
 	}
 }
 

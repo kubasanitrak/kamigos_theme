@@ -40,6 +40,9 @@ button{
 			}
 		}
 	}
+	&-fill {
+		background-color: var(--btn-highlight);
+	}
 	&-icon {
 		// position: absolute;
 		// right: .8em;
