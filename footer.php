@@ -44,7 +44,7 @@
 	</div>
 	<div class="section-footer--row">
 		<div class="section-footer--col section-footer--col_log-in-out">
-			<?php echo do_shortcode('[login_logout_link]'); ?>
+			<?php echo do_shortcode('[login_myaccount_link]'); ?>
 		</div>
 
 		<div class="section-footer--col section-footer--col_newsletter">

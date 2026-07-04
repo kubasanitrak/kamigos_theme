@@ -63,6 +63,8 @@ $theme_uri = get_template_directory_uri();
 
 <link rel="stylesheet" type="text/css" href="<?php echo esc_url( $theme_uri . '/assets/css/style.css?v23-04-2026.1' ); ?>" />
 
+<!-- <link rel="stylesheet" type="text/css" href="<?php #echo esc_url( $theme_uri . '/assets/css/public.css?v23-04-2026.1' ); ?>" /> -->
+
 
 <?php 
 	$DATA_THEME = get_field('data-theme') ? get_field('data-theme') : 'default';

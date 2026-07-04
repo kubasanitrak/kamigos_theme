@@ -370,3 +370,32 @@
 		}
 	}
 }
+
+
+form {
+	input[type="text"],
+	input[type="number"],
+	input[type="phone"],
+	input[type="email"] {
+		& + label {
+			&.label-as-placeholder {
+				transition:
+					opacity #{$dur}s ease-in-out,
+					transform #{$dur}s ease-in-out;
+				opacity: .5;
+				transform: translateX(0);
+			}
+		}
+		&:active,
+		&:focus,
+		&:focus-visible,
+		&:focus-within {
+			& + label {
+				&.label-as-placeholder {
+					opacity: 0;
+					transform: translateX(200%);
+				}
+			}
+		}
+	}
+}

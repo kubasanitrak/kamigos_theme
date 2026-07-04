@@ -22,29 +22,30 @@ get_header(); ?>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 		<?php if(is_front_page()) : ?>
-			<!-- <div class="page-title-container">
-				<h1 class="page-title caps"><?php the_title(); ?></h1>
-			</div> -->
-
-			<!-- div.section.section-header.full-width.split-cols>.split-cols--item*2 -->
+			<!-- <div class="section section-header full-bleed split-cols full-H" data-theme="blue">
+				<div class="split-cols--item">
+					<h1 class="section-header--title">akce</h1>
+					<h5 class="section-header--subtitle border-T">Krátké, dlouhé i pořádně intenzivní. Přesně takové jsou naše akce v Česku i v zahraničí. Ať už si vyberete trénink, víkendový kemp, turnaj, příměstský tábor nebo celé soustředění, čeká vás pohyb, skvělá atmosféra a zážitky.</h5>
+					<a href="#" class="link-icon link-icon--arrow scroll-down"></a>
+				</div>
+				<div class="split-cols--item split-cols--item_header pad-Block pad-Inline">
+					<div class="split-cols--item_img-container">
+						<img decoding="async" src="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
+					</div>
+				</div>
+			</div>
 			<div class="section section-header full-bleed split-cols full-H" data-theme="ochre">
 				<div class="split-cols--item">
-					<!-- 
-					h1.section-header--title
-					h3.section-header--subtitle.border-top
-					a.link-icon.link-icon--arrow.scroll-down
-					-->
 					<h1 class="section-header--title">Jsme beach  kolektiv</h1>
 					<h4 class="section-header--subtitle border-T">Milujeme beach volejbal  a jeho umění předáváme dál.</h4>
 					<a href="#" class="link-icon link-icon--arrow scroll-down"></a>
 				</div>
 				<div class="split-cols--item carousel">
 					<div class="carousel-item carousel-item--img_container">
-						<!-- <img decoding="async" data-src="" data-srcset="" sizes="auto"> -->
-						<img decoding="async" src="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
+						<img decoding="async" src="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 				
 
@@ -73,12 +74,13 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
+			
 			<div class="section section-about full-width" data-theme="default">
 				<h5 class="section-headline caps border-B">Kdo jsme</h5>
 				<div class="split-cols">
 					<div class="split-cols--item split-cols--item_img">
 						<div class="split-cols--img">
-							<img decoding="async" src="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="//192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, //192.168.8.107:3000/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
+							<img decoding="async" src="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
 						</div>
 					</div>
 					<div class="split-cols--item split-cols--item_caption">
@@ -94,9 +96,9 @@ get_header(); ?>
 				<!-- h4.section-join--title -->
 				<h4 class="section-join--title">Přidejte se ke kamigos</h4>
 				<div class="section-join--cta">
-					<a href="#" class="btn btn-oval btn-fill caps">Registrovat se</a>
+					<a href="<?php echo esc_url( kamigos_auth_register_url() ); ?>" class="btn btn-oval btn-fill caps">Registrovat se</a>
 					<p class="plain">Už máte účet?</p>
-					<a href="#" class="textlink textlink-underline">Přihlaste se</a>
+					<a href="<?php echo esc_url( kamigos_auth_login_url() ); ?>" class="textlink textlink-underline">Přihlaste se</a>
 				</div>
 			</div>
 		<!-- </div> -->

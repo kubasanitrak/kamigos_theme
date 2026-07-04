@@ -151,3 +151,23 @@
 		display: none;
 	}
 }
+
+.pad-T {
+	padding-top: calc(var(--pad-T) * 1.333333);
+}
+.pad-B {
+	padding-bottom: calc(var(--pad-T) * 2.6666666);
+}
+.pad-L {
+	padding-left: calc(var(--pad-R));
+}
+.pad-R {
+	padding-right: calc(var(--pad-R));
+}
+
+.pad-Block {
+	padding-block: calc(var(--pad-T) * 7) calc(var(--pad-T) * 1.33333333);
+}
+.pad-Inline {
+	padding-inline: var(--wrapper-padding-inline);
+}

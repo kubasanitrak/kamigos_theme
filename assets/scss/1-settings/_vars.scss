@@ -17,7 +17,7 @@
 	// --hmbrgr-T: calc(3px + (18 - 3) * ((100vw - 320px) / (1920 - 320)));
 
 	--touch-S: 28px;
-	--icon-S: 40px;
+	--icon-S: calc(32px + (48 - 32) * ((100vw - 320px) / (2560 - 320)));
 	--dsalpha-1: 0.0;
 	--dsalpha-2: 0.0;
 	--maW: 1440;

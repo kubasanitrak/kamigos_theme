@@ -35,6 +35,6 @@
 	?>
 		<!-- LOGIN / LOGOUT BTN -->
 		<!-- <a href="#" class="btn btn-outline hover-bgr caps">Přihlásit se</a> -->
-		<?php echo do_shortcode('[login_logout_link]'); ?>
+		<?php echo do_shortcode('[login_myaccount_link]'); ?>
 	</div>
 </div>
