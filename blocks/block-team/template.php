@@ -9,7 +9,7 @@
 <?php
     // $IS_LINKS_GRID = get_field('is_links_grid');
 
-    $CLS_W = ' split-screen--col split-screen--col_news news-list news-list--anim';
+    $CLS_W = 'section section-team pad-T-1 pad-B-5';
 
     $classes = ( ! empty( $block['className'] ) ) ? sprintf( $CLS_W . ' %s', $block['className'] ) : $CLS_W;
 
@@ -21,27 +21,29 @@
 ?>
 
 <?php
-    $argType = get_field( 'loop_argument_type' );
+$argType = get_field( 'loop_argument_type' );
 
-    if( $argType == "count" ) :
-      $args = array(
-        // AN ARRAY OF CATEGORY IDS A POST SHOULD HAVE.
-        // 'category__and' => $CAT_IDS, // array(5,1))) 
-        'post_type' => 'post',
+$instructor_post_type = class_exists( 'EAB_Post_Types' )
+    ? EAB_Post_Types::POST_TYPE_INSTRUCTOR
+    : 'eab_instructor';
+
+if ( $argType === 'count' ) :
+    $args = array(
+        'post_type'      => $instructor_post_type,
+        'post_status'    => 'publish',
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+        'posts_per_page' => get_field( 'items_count' ),
+    );
+else :
+    $todisplay = get_field( 'select_items' );
+    $args      = array(
+        'post_type'   => $instructor_post_type,
         'post_status' => 'publish',
-        'category_name' => 'team, tym',
-        'order' => 'ASC',
-        'posts_per_page' => get_field( 'news_count' )
-      );
-    else:
-      $todisplay = get_field( 'select_members' );
-      $args = array( 
-        'post_type' => 'post',
-        'post_status' => 'publish',
-        'order' => 'ASC',
-        'post__in' => $todisplay
-      );
-    endif;
+        'orderby'     => 'post__in',
+        'post__in'    => is_array( $todisplay ) ? $todisplay : array(),
+    );
+endif;
 
 
     $the_query = new WP_Query( $args );
@@ -61,37 +63,47 @@
         );
         ?>
     >
+    <?php if(get_field('section_title')) : ?>
+        <h5 class="section-headline team-list--headline caps">
+            <?php echo get_field('section_title'); ?>
+        </h5>
+    <?php endif; ?>
+        
+        <div class="team-list">
                         
         <?php 
             while ( $the_query->have_posts() ) : $the_query->the_post();
             $POST_ID = get_the_ID();
             $POST_TITLE = get_the_title();
-            $DATE = get_the_date();
         ?>
-            <div class="news-list--item accord-item">
-                <input type="checkbox" id="accord-switch-<?php echo $POST_ID; ?>_ID" class="accord-item--input">
-                <label for="accord-switch-<?php echo $POST_ID; ?>_ID" class="accord-item--switch">
-                    <span class=""></span>
-                </label>
-                <div class="news-list--item_header accord-item--header">
-                    <h5 class="news-list--item_title caps accord-item--title strong"><?php echo $POST_TITLE; ?></h5>
-                    <div class="news-list--item_row accord-item--header_row">
-                        <p class="news-list--item_info"><?php echo $DATE; ?></p>
-                        <p class="news-list--item_readmore strong"><?php esc_html_e( 'read more', 'kamigos_theme' ); ?></p>
-                    </div>
-                </div>
-                <div class="news-list--item_content accord-item--content">
+            <div class="team-list--item team-list--item_img border-T">
+                <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
+                <?php the_post_thumbnail( 'full', array( 'class' => 'lazyload' ) ); ?>
+            </div>
+            <div class="team-list--item team-list--item_caption">
+                <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
+                <div class="team-list--item_row">
+                    <h5 class="section-headline caps border-B"><?php echo get_field('instructor_shortdesc', $POST_ID ); ?></h5>
                     <?php the_content(); ?>
                 </div>
+                <?php 
+                    $CONTACT_MAIL = get_field('instructor_email', $POST_ID );
+                    $CONTACT_PHONE = get_field('instructor_phone', $POST_ID );
+                    if($CONTACT_MAIL || $CONTACT_PHONE) :
+                ?>
+                    <div class="team-list--item_row">
+                        <h5 class="section-headline caps border-B"><?php _e('Kontakt', 'kamigos_theme' ); ?></h5>
+                        <p class="plain"><a class="hover-underline" href="mailto:<?php echo $CONTACT_MAIL; ?>"><?php echo $CONTACT_MAIL; ?></a></p>
+                        <p class="plain"><a class="hover-underline" href="tel:<?php echo $CONTACT_PHONE; ?>"><?php echo $CONTACT_PHONE; ?></a></p>
+                    </div>
+                <?php endif; ?>
             </div>
         <?php
             endwhile;
+            wp_reset_postdata();
         ?>
         </div>
-
-        <div class="split-screen--col split-screen--col_news shape-3D split-screen--col_scroll-anim split-screen--col_FULL" data-theme="dark">
-            <h1 class="section-title caps"><?php echo get_field( 'news_list_title' ); ?></h1>
-        </div>
+    </div>
 
 <?php else: ?>
     <p><?php esc_html_e( 'Sorry, there are no items to display', 'kamigos_theme' ); ?></p>

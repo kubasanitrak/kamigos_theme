@@ -482,7 +482,7 @@ html {
 	}
 }
 
-.section-headline {
+.section-headline:not(.team-list--headline) {
 	padding-bottom: calc(var(--pad-T) * .5);
 	margin-bottom: calc(var(--pad-T) * .5);
 	@include mq(mq-land) {
@@ -576,5 +576,139 @@ html {
 				outline: none;
 			}
 		}
+	}
+}
+
+
+.faq-item {
+	margin-block: calc(var(--pad-T) * 1.333333) calc(var(--pad-T) * 1.0);
+	@include mq(mq-land) {
+		width: calc( ( 100% - (var(--pad-R) * 10) ) / 2);
+		border: $line-THICK solid var(--color-contrast-high);
+		border-radius: calc(#{$fz-H2} * .75);
+		padding-inline: calc(var(--pad-R) * 2.666666);
+		padding-block: calc(var(--pad-T) * 1.333333);
+		margin-block: 0;
+		display: flex;
+		flex-direction: column;
+		gap: calc(var(--pad-T) * .5);
+	}
+	@include mq(mq-BREAK-P) {
+		width: calc( ( 100%  ) / 2.75);
+	}
+	&--container {
+		display: flex;
+		flex-direction: column;
+		@include mq(mq-land) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: calc(var(--pad-T) * 3) calc(var(--pad-R) * 3);
+			justify-content: center;
+			// justify-content: space-between;
+		}
+		@include mq(mq-BREAK-P) {
+			justify-content: space-around;
+		}
+		.section-headline {
+			width: 100%;
+		}
+	}
+	&--title,
+	&--caption {
+		text-align: center;
+	}
+	&--title {
+		font-size: calc(#{$fz-H2} * .75);
+		line-height: 1em;
+		padding: .5em 0 .5em;
+		border: $line-THICK solid var(--color-contrast-high);
+		border-radius: calc(#{$fz-H2} * .75);
+
+		@include mq(mq-land) {
+			font-size: $fz-H2;
+			border: none;
+			padding: 0;
+		}
+	}
+	&--caption {
+		padding-inline: calc(var(--pad-R) * 2.5);
+		margin-top: calc(var(--pad-T) * .75);
+		font-size: $fz-PLAIN;
+		@include mq(mq-land) {
+			margin-top: auto;
+		}
+	}
+}
+
+.team-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	@include mq(mq-land) {
+		flex-direction: row;
+	}
+	&--headline {
+			padding-bottom: calc(var(--pad-T) * .5);
+	}
+	&--item {
+		@include mq(mq-land) {
+			width: calc((100% - var(--gap)) * .5);
+		}
+		&_img {
+			overflow: hidden;
+			padding-top: calc(var(--pad-T) * .5);
+			@include mq(mq-land) {
+				padding-top: calc(var(--pad-T) * .75);
+				// padding-top: calc(var(--pad-T) * 1.0);
+			}
+			.team-list--item_title {
+				display: block;
+				margin-bottom: var(--gap);
+				@include mq(mq-land) {
+					display: none;
+				}
+			}
+			img {
+				width: calc( (100% - ( var(--gap) * 2 )) / 3 * 2  );
+				max-width: calc( (100% - ( var(--gap) * 2 )) / 3 * 2  );
+				@include mq(mq-land) {
+					// width: 100%;
+					// max-width: 100%;
+				}
+			}
+		}
+		&_caption {
+			padding-top: calc(var(--pad-T) * .35);
+			display: flex;
+			flex-direction: column;
+			gap: var(--gap);
+			@include mq(mq-land) {
+				gap: calc(var(--pad-T) * 2.666666);
+			}
+			position: relative;
+
+			.team-list--item_title {
+				display: none;
+				@include mq(mq-land) {
+					display: block;
+				}
+			}
+			
+			&::before {
+				@include mq(mq-land) {
+					content: "";
+					display: block;
+					background-color: var(--color-contrast-high);
+					position: absolute;
+					left: 0;
+					transform-origin: center;
+					// width: calc(100% + (var(--padL) * 2));
+					top: 0;
+					width: 100%;
+					height: $line-THICK;
+				}
+			}
+		}
+		&_row {}
 	}
 }

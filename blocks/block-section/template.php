@@ -89,10 +89,12 @@
 default : Normal
 ochre : Ochre
 silky-blue : Sky blue
-dark-green : Blue
-blue : Dark green
-off-white : Off white
-lavender : Sandy lavender
+dark-green : Dark green
+blue : Blue
+
+h4 : větší
+h5 : střední
+plain : menší
  -->
 
 

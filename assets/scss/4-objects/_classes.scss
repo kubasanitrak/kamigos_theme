@@ -154,9 +154,19 @@
 
 .pad-T {
 	padding-top: calc(var(--pad-T) * 1.333333);
+	@for $i from 1 through 6 {
+		&-#{$i} {
+			padding-top: calc(var(--pad-T) * 1.333333 * #{$i});
+		}
+	}
 }
 .pad-B {
 	padding-bottom: calc(var(--pad-T) * 2.6666666);
+	@for $i from 1 through 6 {
+		&-#{$i} {
+			padding-bottom: calc(var(--pad-T) * 1.333333 * #{$i});
+		}
+	}
 }
 .pad-L {
 	padding-left: calc(var(--pad-R));

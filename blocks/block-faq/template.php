@@ -8,7 +8,7 @@
 
     $BGR_COLOR = get_field('section_bgr');
     // Create class attribute allowing for custom "className" values.
-    $CLS_W = 'section faq-item--container';
+    $CLS_W = 'section faq-item--container pad-T-1 pad-B-5';
 
 
     

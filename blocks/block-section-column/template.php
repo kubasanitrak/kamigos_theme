@@ -153,9 +153,10 @@
         <h1 class="section-header--title">
             <?php echo get_field('content_title'); ?>
         </h1>
-        <h5 class="section-header--subtitle border-T">
+
+        <p class="section-header--subtitle border-T <?php echo get_field('content_subtitle_size') ?>">
             <?php echo get_field('content_subtitle'); ?>
-        </h5>
+        </p>
 
         <?php 
             if($SHOW_ARR_DOWN) :

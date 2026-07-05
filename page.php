@@ -34,6 +34,7 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
+
 			<div class="section section-header full-bleed split-cols full-H" data-theme="ochre">
 				<div class="split-cols--item">
 					<h1 class="section-header--title">Jsme beach  kolektiv</h1>
@@ -45,16 +46,7 @@ get_header(); ?>
 						<img decoding="async" src="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp" class="" alt="" loading="lazy" srcset="http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-768x512.webp 768w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-300x200.webp 300w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1024x683.webp 1024w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1-1536x1024.webp 1536w, http://localhost:8888/kamigos.cz/wp-content/uploads/2026/06/kamigos-foto-akce-placeholder-1.webp 1920w" sizes="(max-width: 640px) 100vw, 640px">
 					</div>
 				</div>
-			</div> -->
-
-				
-
-		<?php endif; ?>
-
-		<!-- <div class="section section-content"> -->
-			<?php the_content(); ?>
-
-
+			</div>
 			<div class="section section-offer full-width" data-theme="silky-blue">
 				<h5 class="section-headline caps border-B">Tréninky</h5>
 				<h5 class="section-perex">Chcete se potkávat pravidelně? Trénujeme dlouhodobě a systematicky. Dospělí během zimní i letní sezóny, děti v rámci sportovních kroužků. Přihlášky jsou vždy na půl roku nebo školní pololetí. Díky tomu má trénink smysl i kontinuitu a stává se přirozenou součástí vašeho týdne.</h5>
@@ -73,7 +65,16 @@ get_header(); ?>
 						</a>
 					</div>
 				</div>
-			</div>
+			</div>  -->
+
+				
+
+		<?php endif; ?>
+
+		<!-- <div class="section section-content"> -->
+			<?php the_content(); ?>
+
+
 			
 			<div class="section section-about full-width" data-theme="default">
 				<h5 class="section-headline caps border-B">Kdo jsme</h5>
