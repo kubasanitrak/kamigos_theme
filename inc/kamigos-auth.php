@@ -38,20 +38,19 @@ function kamigos_auth_login_url( $redirect = '' ) {
  */
 function kamigos_login_enqueue_assets() {
 	$theme_uri = get_template_directory_uri();
-	$theme_dir = get_template_directory();
 
 	wp_enqueue_style(
 		'kamigos-login',
 		$theme_uri . '/assets/css/login.css',
 		array(),
-		filemtime( $theme_dir . '/assets/css/login.css' )
+		kamigos_asset_version( '/assets/css/login.css' )
 	);
 
 	wp_enqueue_script(
 		'kamigos-login',
 		$theme_uri . '/assets/js/login.js',
 		array(),
-		filemtime( $theme_dir . '/assets/js/login.js' ),
+		kamigos_asset_version( '/assets/js/login.js' ),
 		true
 	);
 }

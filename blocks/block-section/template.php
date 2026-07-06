@@ -71,6 +71,7 @@
     );
     ?>
 >
+
 <?php endif; ?>
 
         <?php if(get_field('section_title')) : ?>
@@ -80,6 +81,12 @@
         <?php endif; ?>
 
         <InnerBlocks/>
+
+        <?php if(get_field('has_cta')) : ?>
+            <div class="section-row section-row--cta">
+                <a href="<?php echo get_field('cta_url'); ?>" class="btn btn-oval btn-outline caps hover-bgr hover-bgr--ochre"><?php echo get_field('cta_label'); ?></a>
+            </div>
+        <?php endif; ?>
 
 <?php if ( ! $is_preview ) : ?>
     </div>

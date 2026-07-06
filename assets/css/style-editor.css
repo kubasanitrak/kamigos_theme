@@ -305,6 +305,10 @@
   padding-inline: var(--wrapper-padding-inline);
 }
 
+html :where(.editor-styles-wrapper) {
+  font-family: inherit;
+}
+
 /* Main column width */
 .wp-block {
   max-width: 1440px;
@@ -324,6 +328,7 @@
   max-width: none;
 }
 
+.wp-block.acf-block-body, .wp-block-acf-header, .wp-block-acf-section, .wp-block-acf-block-body, .wp-block-acf-section-column,
 .wp-block .custom-section,
 .wp-block .custom-section-header,
 .wp-block .program-container,

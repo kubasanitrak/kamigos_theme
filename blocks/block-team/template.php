@@ -26,6 +26,14 @@ $argType = get_field( 'loop_argument_type' );
 $instructor_post_type = class_exists( 'EAB_Post_Types' )
     ? EAB_Post_Types::POST_TYPE_INSTRUCTOR
     : 'eab_instructor';
+/*
+$event_post_type = class_exists( 'EAB_Post_Types' )
+? EAB_Post_Types::POST_TYPE_EVENT  : 'eab_event';
+$training_post_type = class_exists( 'EAB_Post_Types' )
+? EAB_Post_Types::POST_TYPE_TRAINING : 'eab_training';
+
+'post_type'      => array( $event_post_type, $training_post_type ),
+*/
 
 if ( $argType === 'count' ) :
     $args = array(

@@ -9,5 +9,10 @@
         "mode": "edit",
         "renderTemplate": "template.php"
     },
-    "align": "full"
+    "align": "full",
+    "style": [
+        "file:./block-style.css",
+        "file:./lite-light.min.css"
+    ],
+    "viewScriptModule": "file:./block-photogallery-script.js"
 }

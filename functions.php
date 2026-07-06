@@ -1,4 +1,6 @@
 <?php
+require_once get_template_directory() . '/inc/theme-assets.php';
+
 add_action( 'after_setup_theme', 'kamigos_theme_setup' );
 function kamigos_theme_setup() {
 	// load_theme_textdomain( 'kamigos_theme', get_template_directory() . '/languages' );
@@ -17,10 +19,6 @@ function kamigos_theme_setup() {
 	) );
 }
 
-add_action( 'comment_form_before', 'kamigos_theme_enqueue_comment_reply_script' );
-function kamigos_theme_enqueue_comment_reply_script() {
-	if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
-}
 add_filter( 'the_title', 'kamigos_theme_title' );
 function kamigos_theme_title( $title ) {
 	if ( $title == '' ) {
@@ -28,20 +26,6 @@ function kamigos_theme_title( $title ) {
 	} else {
 		return $title;
 	}
-}
-
-/* / — / — / — / — / — / — / — / — / — */
-/* / — / — / — / — / — / — / — / — / — */
-/* RESPONSIVE IMG LAZYLOAD RELATED SCRIPTS */
-add_action( 'wp_enqueue_scripts', 'kamigos_theme_scripts' );
-function kamigos_theme_scripts() {
-    wp_enqueue_script(
-        'kamigos_theme_lazyload',
-        get_template_directory_uri() . '/assets/js/lazyload.js',
-        array(),
-        filemtime( get_template_directory() . '/assets/js/lazyload.js' ),
-        true
-    );
 }
 
 function wp_example_excerpt_length( $length ) {
@@ -159,22 +143,11 @@ function kamigos_theme_comments_number( $count ) {
 /*   — — —  — — — — — — — — — — — — */
 add_action( 'init', 'register_acf_blocks', 5 );
 function register_acf_blocks() {
-    foreach ( glob( __DIR__ . '/blocks/block-*' ) as $block_path ) {
-        register_block_type( $block_path );
-    }
-    // $globals = $GLOBALS;
-    // foreach ($globals as $key => $value) {
-    //     $GLOBALS[$key] = $value;
-    // }
-    // Register js files in block directories
-    // You'll have to name your js file "josh-my-block-name.js" so that it adds the right name space for the block.
-    foreach ( glob(__DIR__ . '/blocks/block-*/*.js') as $path) {
-        $file_name = pathinfo($path, PATHINFO_FILENAME);
-        // wp_register_script( $file_name, get_stylesheet_directory_uri() . '/blocks/' . $file_name . '/' . $file_name . '.js', '', $GLOBALS['version']);
-        wp_register_script( $file_name, get_stylesheet_directory_uri() . '/blocks/' . $file_name . '/' . $file_name . '.js', '');
-    }
-
-    
+	foreach ( glob( __DIR__ . '/blocks/block-*' ) as $block_path ) {
+		if ( is_dir( $block_path ) ) {
+			register_block_type( $block_path );
+		}
+	}
 }
 // REMOVE INNER DIV WRAPPER INSIDE ACF-BLOCKS
 add_filter( 'acf/blocks/wrap_frontend_innerblocks', 'acf_should_wrap_innerblocks', 10, 2 );
@@ -184,16 +157,6 @@ function acf_should_wrap_innerblocks( $wrap, $name ) {
     // }
     return false;
 }
-// Gutenberg custom stylesheet
-function custom_gutenberg_editor_styles() {
-    wp_enqueue_style(
-        'admin-styles',
-        get_stylesheet_directory_uri().'/assets/css/style-editor.css?v03-05-2026.01'
-    );
-}
-add_action( 'admin_enqueue_scripts', 'custom_gutenberg_editor_styles' );
-
-
 require_once get_template_directory() . '/inc/kamigos-auth.php';
 
 
@@ -303,14 +266,25 @@ function kamigos_logout_shortcode() {
 }
 add_shortcode( 'logout_link', 'kamigos_logout_shortcode' );
 
-function kamigos_login_myaccount_shortcode() {
+function kamigos_login_myaccount_shortcode( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'type' => 'btn',
+		),
+		$atts,
+		'login_myaccount_link'
+	);
+
 	if ( is_user_logged_in() ) {
-		// $link = wp_logout_url( home_url() );
 		$link = home_url( '/muj-ucet/' );
 		$text = __( 'Můj účet', 'kamigos_theme' );
 	} else {
 		$link = kamigos_auth_login_url( get_permalink() );
 		$text = __( 'Přihlásit se', 'kamigos_theme' );
+	}
+
+	if ( 'txt' === $atts['type'] ) {
+		return '<a class="plain textlink textlink-underline" href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a>';
 	}
 
 	return '<a class="btn btn-outline btn-oval hover-bgr caps" href="' . esc_url( $link ) . '">' . esc_html( $text ) . '</a>';

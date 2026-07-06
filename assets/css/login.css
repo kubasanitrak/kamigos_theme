@@ -118,10 +118,12 @@ body.login.kamigos-login #login {
   align-self: flex-end;
   padding: 0;
   grid-column: 2 / span 1;
+  min-height: 40vh;
 }
 @media screen and (orientation: landscape) {
   body.login.kamigos-login #login {
     grid-column: 3 / 5;
+    min-height: 50vh;
   }
 }
 body.login.kamigos-login #login h1 {
@@ -169,6 +171,10 @@ body.login.kamigos-login #resetpassform p {
 }
 body.login.kamigos-login .kamigos-login-forgot {
   margin-top: calc(var(--gap, 1rem) * 0.5);
+}
+body.login.kamigos-login .eab-auth-notice {
+  text-align: center;
+  font-size: calc(30px + (36 - 30) * ((100vw - 320px) / (1920 - 320)));
 }
 body.login.kamigos-login #loginform label,
 body.login.kamigos-login #lostpasswordform label,

@@ -1379,22 +1379,46 @@ h6, .h6 {
   --btn-highlight: var(--kami-ochre);
 }
 
+.events-card .icon,
 .eab-card .icon {
   transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 }
+.events-card .events-card__media,
+.events-card .eab-card__media,
+.eab-card .events-card__media,
 .eab-card .eab-card__media {
   transform: rotate(0deg);
   transition: transform 0.35s ease-in-out;
 }
-.eab-card:hover, .eab-card:active, .eab-card:focus, .eab-card:focus-within {
+.events-card:hover, .events-card:active, .events-card:focus, .events-card:focus-within,
+.eab-card:hover,
+.eab-card:active,
+.eab-card:focus,
+.eab-card:focus-within {
   outline: none;
 }
-.eab-card:hover .icon, .eab-card:active .icon, .eab-card:focus .icon, .eab-card:focus-within .icon {
+.events-card:hover .icon, .events-card:active .icon, .events-card:focus .icon, .events-card:focus-within .icon,
+.eab-card:hover .icon,
+.eab-card:active .icon,
+.eab-card:focus .icon,
+.eab-card:focus-within .icon {
   outline: none;
   border-color: var(--color-highlight);
   background-color: var(--color-highlight);
 }
-.eab-card:hover .eab-card__media, .eab-card:active .eab-card__media, .eab-card:focus .eab-card__media, .eab-card:focus-within .eab-card__media {
+.events-card:hover .events-card__media,
+.events-card:hover .eab-card__media, .events-card:active .events-card__media,
+.events-card:active .eab-card__media, .events-card:focus .events-card__media,
+.events-card:focus .eab-card__media, .events-card:focus-within .events-card__media,
+.events-card:focus-within .eab-card__media,
+.eab-card:hover .events-card__media,
+.eab-card:hover .eab-card__media,
+.eab-card:active .events-card__media,
+.eab-card:active .eab-card__media,
+.eab-card:focus .events-card__media,
+.eab-card:focus .eab-card__media,
+.eab-card:focus-within .events-card__media,
+.eab-card:focus-within .eab-card__media {
   outline: none;
   transform: rotate(-3deg);
 }

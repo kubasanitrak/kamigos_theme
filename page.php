@@ -76,7 +76,7 @@ get_header(); ?>
 
 
 			
-			<div class="section section-about full-width" data-theme="default">
+<!-- 			<div class="section section-about full-width" data-theme="default">
 				<h5 class="section-headline caps border-B">Kdo jsme</h5>
 				<div class="split-cols">
 					<div class="split-cols--item split-cols--item_img">
@@ -91,7 +91,7 @@ get_header(); ?>
 				<div class="section-row section-row--cta">
 					<a href="#" class="btn btn-oval btn-outline caps hover-bgr hover-bgr--ochre">Zjistit víc</a>
 				</div>
-			</div>
+			</div> -->
 			
 			<div class="section section-join full-width" data-theme="silky-blue">
 				<!-- h4.section-join--title -->
@@ -99,7 +99,8 @@ get_header(); ?>
 				<div class="section-join--cta">
 					<a href="<?php echo esc_url( kamigos_auth_register_url() ); ?>" class="btn btn-oval btn-fill caps">Registrovat se</a>
 					<p class="plain">Už máte účet?</p>
-					<a href="<?php echo esc_url( kamigos_auth_login_url() ); ?>" class="textlink textlink-underline">Přihlaste se</a>
+					<!-- <a href="<?php #echo esc_url( kamigos_auth_login_url() ); ?>" class="textlink textlink-underline">Přihlaste se</a> -->
+					<?php echo do_shortcode( '[login_myaccount_link type="txt"]' ); ?>
 				</div>
 			</div>
 		<!-- </div> -->

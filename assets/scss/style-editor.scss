@@ -15,6 +15,10 @@
 //     --info-col-num-minus-1: 1;
 // }
 
+html :where(.editor-styles-wrapper) {
+  font-family: inherit;
+}
+
 /* Main column width */
 .wp-block { max-width: 1440px; }
 .wp-block-acf-proj-info-col {
@@ -27,6 +31,11 @@
 .wp-block[data-align="full"] { max-width: none; }
 
 .wp-block {
+    &.acf-block-body,
+    &-acf-header,
+    &-acf-section,
+    &-acf-block-body,
+    &-acf-section-column,
     .custom-section,
     .custom-section-header,
     .program-container,
