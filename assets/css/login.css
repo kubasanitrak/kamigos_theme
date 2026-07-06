@@ -327,6 +327,13 @@ body.login.kamigos-login .login-action-resetpass #login h1 a::before {
   font-size: calc(36px + (60 - 36) * ((100vw - 320px) / (1920 - 320)));
 }
 
+.notice {
+  font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1920 - 320)));
+}
+.notice .notice-error {
+  font-size: inherit;
+}
+
 .kamigos-login-forgot {
   text-align: right;
   margin: calc(var(--gap, 1rem) * -0.25) 0 var(--gap, 1rem);

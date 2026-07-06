@@ -279,7 +279,7 @@ function kamigos_login_myaccount_shortcode( $atts ) {
 		$link = home_url( '/muj-ucet/' );
 		$text = __( 'Můj účet', 'kamigos_theme' );
 	} else {
-		$link = kamigos_auth_login_url( get_permalink() );
+		$link = kamigos_auth_login_url();
 		$text = __( 'Přihlásit se', 'kamigos_theme' );
 	}
 
