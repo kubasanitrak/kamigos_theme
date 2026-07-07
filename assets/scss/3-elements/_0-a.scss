@@ -34,6 +34,17 @@ a {
 		}
 	}
 }
+.main-nav-list a {
+	&:not(.btn),
+	&.hover-underline {
+		&::after {
+			height: 0;
+			@include mq(mq-land) {
+				height: $underline-size;
+			}
+		}
+	}
+}
 
 .link-icon {
 	width: calc(var(--icon-S) * .75);
