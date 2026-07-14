@@ -77,39 +77,41 @@ endif;
         </h5>
     <?php endif; ?>
         
-        <div class="team-list">
+        <div class="team-list-container">
                         
-        <?php 
-            while ( $the_query->have_posts() ) : $the_query->the_post();
-            $POST_ID = get_the_ID();
-            $POST_TITLE = get_the_title();
-        ?>
-            <div class="team-list--item team-list--item_img border-T">
-                <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
-                <?php the_post_thumbnail( 'full', array( 'class' => 'lazyload' ) ); ?>
-            </div>
-            <div class="team-list--item team-list--item_caption">
-                <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
-                <div class="team-list--item_row">
-                    <h5 class="section-headline caps border-B"><?php echo get_field('instructor_shortdesc', $POST_ID ); ?></h5>
-                    <?php the_content(); ?>
+            <?php 
+                while ( $the_query->have_posts() ) : $the_query->the_post();
+                $POST_ID = get_the_ID();
+                $POST_TITLE = get_the_title();
+            ?>
+            <div class="team-list">
+                <div class="team-list--item team-list--item_img border-T">
+                    <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
+                    <?php the_post_thumbnail( 'full', array( 'class' => 'lazyload' ) ); ?>
                 </div>
-                <?php 
-                    $CONTACT_MAIL = get_field('instructor_email', $POST_ID );
-                    $CONTACT_PHONE = get_field('instructor_phone', $POST_ID );
-                    if($CONTACT_MAIL || $CONTACT_PHONE) :
-                ?>
+                <div class="team-list--item team-list--item_caption">
+                    <h3 class="team-list--item_title "><?php echo $POST_TITLE; ?></h3>
                     <div class="team-list--item_row">
-                        <h5 class="section-headline caps border-B"><?php _e('Kontakt', 'kamigos_theme' ); ?></h5>
-                        <p class="plain"><a class="hover-underline" href="mailto:<?php echo $CONTACT_MAIL; ?>"><?php echo $CONTACT_MAIL; ?></a></p>
-                        <p class="plain"><a class="hover-underline" href="tel:<?php echo $CONTACT_PHONE; ?>"><?php echo $CONTACT_PHONE; ?></a></p>
+                        <h5 class="section-headline caps border-B"><?php echo get_field('instructor_shortdesc', $POST_ID ); ?></h5>
+                        <?php the_content(); ?>
                     </div>
-                <?php endif; ?>
+                    <?php 
+                        $CONTACT_MAIL = get_field('instructor_email', $POST_ID );
+                        $CONTACT_PHONE = get_field('instructor_phone', $POST_ID );
+                        if($CONTACT_MAIL || $CONTACT_PHONE) :
+                    ?>
+                        <div class="team-list--item_row">
+                            <h5 class="section-headline caps border-B"><?php _e('Kontakt', 'kamigos_theme' ); ?></h5>
+                            <p class="plain"><a class="hover-underline" href="mailto:<?php echo $CONTACT_MAIL; ?>"><?php echo $CONTACT_MAIL; ?></a></p>
+                            <p class="plain"><a class="hover-underline" href="tel:<?php echo $CONTACT_PHONE; ?>"><?php echo $CONTACT_PHONE; ?></a></p>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
-        <?php
-            endwhile;
-            wp_reset_postdata();
-        ?>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            ?>
         </div>
     </div>
 

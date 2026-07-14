@@ -83,4 +83,4 @@ $theme_uri = get_template_directory_uri();
 		<!-- NAVIGATION TOP -->
 	</div> <!-- END DIV CLASS HEADER -->
 
-	<div class="wrapper loading" id="wrapper-id" data-theme="<?php echo $DATA_THEME; ?>">
+	<div class="wrapper loading" id="wrapper-id" >

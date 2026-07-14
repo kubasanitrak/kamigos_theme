@@ -1,5 +1,7 @@
-
-<div class="section scroll-trigger scroll-trigger--foter section-footer">
+<?php 
+	$DATA_THEME = get_field('data-theme') ? get_field('data-theme') : 'default';
+?>
+<div class="section scroll-trigger scroll-trigger--foter section-footer" data-theme="<?php echo $DATA_THEME; ?>">
 	<div class="section-footer--row">
 		<div class="section-footer--col section-footer--col_logo">
 			<!-- LOGO -->

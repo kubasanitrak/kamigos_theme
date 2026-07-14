@@ -5,28 +5,49 @@
 	transition: transform $global-transistion-duration 0.0s ease-out;
 }
 	
-.menu-container li {
+.menu-container li,
+.menu-container .submenu {
 	opacity: 0;
 	
 	transition: 
 		/*property	duration	delay */
-		opacity		0.5s 0.3s;
+		opacity		0.5s		0.3s;
 		
 	@include mq(mq-land) {
 		opacity: 1;
 	}
-		
-		// @include uni-offset(7, 0.25, opacity, 0.15);
 }
 .nav-switch ~ label ~ .menu-container {
 	background-color: transparent;
+	li {
+		transition-duration: 0.25s;
+		transition-delay: 0.0s;
+	}
+	.submenu {
+		transition: 
+			/*property	duration	delay */
+			opacity		0.0s		0.25s;
+	}
+}
+.nav-switch ~ label ~ .menu-container {
+	transition-duration: 0.5s;
+	transition-delay: 0.65s;
 }
 .nav-switch:checked ~ label ~ .menu-container {
 	background-color: var(--menu-bg);
+	transition-duration: 0.5s;
+	transition-delay: 0.0s;
+
 	li {
 		opacity: 1;
-		// transition-delay: $global-transistion-duration;
-		// @include uni-offset(6, 0.85, opacity, 0.25);
+		transition-duration: 0.5s;
+		transition-delay: 0.5s;
+	}
+
+	.submenu {
+		opacity: 1;
+		transition-duration: 0.5s;
+		transition-delay: 0.65s;
 	}
 }
 
