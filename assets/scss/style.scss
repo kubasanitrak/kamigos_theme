@@ -95,6 +95,7 @@ html {
 [data-theme="blue"] {
 	--color-bg: var(--kami-blue);
 	--footer-bg: var(--color-bg);
+	--btn-highlight: var(--color-bg);
 }
 [data-theme="dark-green"] {
 	--color-bg: var(--kami-dark-green);
@@ -735,7 +736,7 @@ html {
 	}
 	&--item {
 		@include mq(mq-land) {
-			width: calc((100% - var(--gap)) * .5);
+			width: calc((100% - (var(--gap) * 1.005)) * .5);
 		}
 		&_img {
 			overflow: hidden;
