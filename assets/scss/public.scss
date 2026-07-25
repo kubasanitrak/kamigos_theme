@@ -678,7 +678,8 @@
 	border: $line-THICK solid var(--color-contrast-high);
 	border-radius: $bor-RADIUS;
 	width: calc((100% - (var(--pad-R) * 0.5)) * 0.5);
-	background-color: var(--white, #fff);
+	// background-color: var(--white, #fff);
+	background-color: transparent;
 	box-sizing: border-box;
 }
 
@@ -839,9 +840,9 @@
 }
 
 .eab-checkout-line {
-	border: $line-THICK solid var(--gray1);
-	border-radius: calc(var(--dot-R) * 2);
-	padding: calc(var(--gap) * 1.25);
+	// border: $line-THICK solid var(--gray1);
+	// border-radius: calc(var(--dot-R) * 2);
+	// padding: calc(var(--gap) * 1.25);
 	margin-bottom: calc(var(--pad-T) * 1.2);
 	position: relative;
 
@@ -856,7 +857,7 @@
 }
 
 .eab-remove-line {
-	position: absolute;
+	// position: absolute;
 	top: calc(var(--gap) * 0.75);
 	right: calc(var(--gap) * 0.75);
 	border: 0;
