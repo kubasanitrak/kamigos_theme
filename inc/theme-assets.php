@@ -154,6 +154,14 @@ function kamigos_enqueue_frontend_assets() {
 	);
 
 	wp_enqueue_script(
+		'kamigos-flickity',
+		$theme_uri . '/assets/js/libs/flickity.pkgd.min.js',
+		array(),
+		kamigos_asset_version( '/assets/js/libs/flickity.pkgd.min.js' ),
+		true
+	);
+
+	wp_enqueue_script(
 		'kamigos-theme-front',
 		$theme_uri . '/assets/js/theme-front.js',
 		array(),

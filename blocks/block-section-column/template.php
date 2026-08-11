@@ -148,7 +148,6 @@
         else :
         // CLAIM AND OR HEADLINE
     ?>
-        <!-- <InnerBlocks/> -->
 
         <h1 class="section-header--title">
             <?php echo get_field('content_title'); ?>
@@ -170,3 +169,38 @@
     ?>
     
 </div>
+<?php
+    if ($img_L_count > 1) :
+?>
+<script>
+(function(){
+    const initializeBlock = function (block) {
+        const _carousel = block;
+        // Initialize Flickity with options
+        new Flickity(_carousel, {
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: true,
+            cellAlign: 'left',
+        });
+    };
+
+    // Initialize each block on page load (front end).
+    document.addEventListener('DOMContentLoaded', () => {
+        let _selector = '.carousel';
+        // const flickityBlocks = document.querySelectorAll('.carousel');
+        const flickityBlocks = document.querySelectorAll(_selector);
+        flickityBlocks.forEach(block => {
+            initializeBlock(block);
+        });
+    });
+
+    // Initialize dynamic block preview (editor).
+    if (window.acf) {
+        window.acf.addAction('render_block_preview/type=flickity', initializeBlock);
+    }
+})();
+</script>
+<?php 
+    endif;
+?>
