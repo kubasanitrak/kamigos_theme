@@ -157,6 +157,10 @@ function acf_should_wrap_innerblocks( $wrap, $name ) {
     // }
     return false;
 }
+add_filter( 'acf/blocks/default_block_version', function() {
+    return 3;
+});
+
 require_once get_template_directory() . '/inc/kamigos-auth.php';
 
 add_filter( 'acf/blocks/default_block_version', function() {
