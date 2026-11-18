@@ -33,8 +33,8 @@
 			'menu_class' => 'nav-list sub-nav-list list-none desktop-hide',
 		 ) );
 	?>
-		<!-- LOGIN / LOGOUT BTN -->
-		<!-- <a href="#" class="btn btn-outline hover-bgr caps">Přihlásit se</a> -->
-		<?php echo do_shortcode('[login_myaccount_link]'); ?>
+		<?php if ( ! kamigos_is_wp_login() ) : ?>
+		<?php echo do_shortcode( '[login_myaccount_link]' ); ?>
+		<?php endif; ?>
 	</div>
 </div>

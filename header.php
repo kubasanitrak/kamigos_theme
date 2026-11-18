@@ -69,18 +69,14 @@ $theme_uri = get_template_directory_uri();
 <body>
 	<script> document.body.className="js";</script>
 
-	<div class="header" id="headerID" data-theme="<?php echo $DATA_THEME; ?>">
-		<div class="logo-container" >
-			<div class="svg-container logo" id="logoID" style="--aspect-ratio: 800/212;">
-				<!-- LOGO SVG -->
-				<?php get_template_part( 'template-parts/logo', 'top' ); ?>
-				<!-- LOGO SVG -->
-			</div>
-			<a class="abs-link" href="<?php echo get_site_url(); ?>"></a>
-		</div>
-		<!-- NAVIGATION TOP -->
-				<?php get_template_part( 'template-parts/navigation', 'top' ); ?>
-		<!-- NAVIGATION TOP -->
-	</div> <!-- END DIV CLASS HEADER -->
+	<?php
+	get_template_part(
+		'template-parts/site-header',
+		null,
+		array(
+			'theme' => $DATA_THEME,
+		)
+	);
+	?>
 
 	<div class="wrapper loading" id="wrapper-id" >

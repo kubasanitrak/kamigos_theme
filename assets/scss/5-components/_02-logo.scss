@@ -2,7 +2,7 @@
 	// height: var(--logo-H);
 	
 	position: absolute;
-	top: calc(var(--pad-T) * 3);
+	top: calc(var(--pad-T) * 1.0);
 	left: var(--pad-R);
 	z-index: 50;
 	@include mq(mq-land) {

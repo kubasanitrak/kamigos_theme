@@ -4,7 +4,7 @@
 .hamburger {
 	display: block;
 	position: absolute;
-	top: calc( (var(--pad-T) * 3) - (#{$ham-H} * .25));
+	top: calc( (var(--pad-T) * 1.0) - (#{$ham-H} * .25));
 	// top: calc( (var(--pad-T) * 3));
 	right: 0;
 	z-index: 2;

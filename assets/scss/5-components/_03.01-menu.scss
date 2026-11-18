@@ -143,9 +143,15 @@
 		// margin-top: auto;
 	}
 }
+.section-footer--col {
+	p:not(.copyright), .menu li {
+		font-size: $fz-H5;
+	}
+}
 .foot-nav-list {
 	&.cols-2 {
 		column-count: 2;
+		font-size: $fz-H5;
 		@include mq(mq-land) {
 			column-count: 1;
 		}

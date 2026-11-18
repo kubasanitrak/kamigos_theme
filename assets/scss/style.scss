@@ -333,7 +333,7 @@ html {
 .menu-container {
 	@include mq(mq-land) {
 		height: calc(var(--logo-H) * 1.5 );
-		top: var(--pad-T);
+		top: calc(var(--pad-T) * .5);
 	}
 }
 
@@ -382,6 +382,13 @@ html {
 		flex-wrap: wrap;
 	}
 }
+.section-banners {
+	width: 100%;
+	@include mq(mq-land) {
+		min-height: initial;
+		width: 50%;
+	}
+}
 .split-cols {
 	.section-headline {
 		width: 100%;
@@ -422,9 +429,15 @@ html {
 			min-height: initial;
 			width: 50%;
 		}
-		&:not(.carousel):not(.split-cols--item_img):not(.split-cols--item_caption) {
+		&:not(.carousel):not(.split-cols--item_img):not(.split-cols--item_caption):not(.split-cols--item_banners) {
 			// padding: var(--pad-T) var(--pad-R);
 			padding: calc(var(--pad-T) * 7) var(--pad-R);
+		}
+		&_banners {
+			padding: calc(var(--pad-T) * 1) var(--pad-R);
+			@include mq(mq-land) {
+				padding: calc(var(--pad-T) * 4) var(--pad-R) calc(var(--pad-T) * 1.0) calc(var(--pad-R) * 10);
+			}
 		}
 		&_img {
 		}
@@ -914,5 +927,77 @@ html {
 		background: hsla(var(--kamigos-blue-hsl), 0.65);
 		color: var(--white);
 		border-radius: var(--dot-R);
+	}
+}
+
+.section-banners {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--pad-T) * 1);
+}
+
+.section-banners__empty {
+	margin: 0;
+}
+
+.section-banner {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--pad-T) * 0.65);
+	padding: calc(var(--pad-T) * 0.7) calc(var(--pad-R) * 0.85) calc(var(--pad-T) * 0.65);
+	border: $line-THICK solid var(--color-contrast-high);
+	border-radius: calc(#{$fz-H4} * 0.75);
+	color: var(--color-contrast-high);
+	text-decoration: none;
+
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--gap);
+	}
+
+	&__title {
+		margin: 0;
+		font-size: $fz-H3;
+		line-height: 1;
+	}
+
+	.icon {
+		flex: 0 0 auto;
+		width: var(--icon-S);
+		height: var(--icon-S);
+		margin-left: auto;
+		transition:
+			background-color #{$dur}s ease-in-out,
+			border-color #{$dur}s ease-in-out;
+	}
+
+	&:hover,
+	&:active,
+	&:focus,
+	&:focus-within {
+		outline: none;
+
+		.icon {
+			outline: none;
+			border-color: var(--color-highlight);
+			background-color: var(--color-highlight);
+		}
+	}
+
+	&__media {
+		display: block;
+		overflow: hidden;
+		border-radius: 0 0 calc(#{$fz-H4} * 0.4) calc(#{$fz-H4} * 0.4);
+		aspect-ratio: 2 / 1;
+		background: var(--kami-silky-blue);
+	}
+
+	&__img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 }

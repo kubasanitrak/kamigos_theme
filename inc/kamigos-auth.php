@@ -73,6 +73,33 @@ function kamigos_login_body_class( $classes ) {
 add_filter( 'login_body_class', 'kamigos_login_body_class' );
 
 /**
+ * Whether the current request is wp-login.php (login, lost password, reset).
+ */
+function kamigos_is_wp_login() {
+	return isset( $GLOBALS['pagenow'] ) && 'wp-login.php' === $GLOBALS['pagenow'];
+}
+
+/**
+ * Same site header as the front end. Skipped for the interim-login modal.
+ */
+function kamigos_login_site_header() {
+	global $interim_login;
+
+	if ( ! empty( $interim_login ) ) {
+		return;
+	}
+
+	get_template_part(
+		'template-parts/site-header',
+		null,
+		array(
+			'theme' => 'default',
+		)
+	);
+}
+add_action( 'login_header', 'kamigos_login_site_header' );
+
+/**
  * Custom footer on login screen — registration prompt.
  */
 function kamigos_login_footer_markup() {

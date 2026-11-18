@@ -149,11 +149,12 @@
         // CLAIM AND OR HEADLINE
     ?>
 
-        <h1 class="section-header--title">
+        <h1 class="section-header--title border-B">
             <?php echo get_field('content_title'); ?>
         </h1>
 
-        <p class="section-header--subtitle border-T <?php echo get_field('content_subtitle_size') ?>">
+        <!-- <p class="section-header--subtitle border-T <?php #echo get_field('content_subtitle_size') ?>">  -->
+        <p class="section-header--subtitle  <?php echo get_field('content_subtitle_size') ?>"> 
             <?php echo get_field('content_subtitle'); ?>
         </p>
 
@@ -182,6 +183,8 @@
             prevNextButtons: false,
             pageDots: true,
             cellAlign: 'left',
+            // autoPlay: true,
+            autoPlay: 4500,
         });
     };
 

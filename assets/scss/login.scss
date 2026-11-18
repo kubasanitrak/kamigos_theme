@@ -3,6 +3,13 @@
 @import '1-settings/_custom-ff';
 @import '1-tools/_mixins';
 
+@import '3-elements/_0-a';
+@import '4-objects/_svg';
+@import '5-components/_01-header';
+@import '5-components/_02-logo';
+@import '5-components/_03.01-menu';
+@import '5-components/_03.02-hamburger';
+
 @font-face {
 	font-family: 'FF-Reg';
 	src:
@@ -350,5 +357,159 @@ body.login.kamigos-login {
 		font-size: inherit;
 		text-decoration: underline;
 		text-underline-offset: 0.15em;
+	}
+}
+
+// Header pieces that live outside the shared partials (style.scss and menu motion).
+body.login {
+	.header,
+	.header *,
+	.header *::before,
+	.header *::after {
+		box-sizing: border-box;
+	}
+
+	.header {
+		z-index: 1000;
+		--menu-bg: var(--kami-ochre);
+		--color-contrast-high: var(--black);
+
+		@include mq(mq-land) {
+			--menu-bg: transparent;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: inherit;
+				box-shadow: none;
+				outline: none;
+			}
+		}
+	}
+
+	.svg-container.logo {
+		padding-bottom: calc(100% / (var(--aspect-ratio)));
+	}
+
+	.logo-container,
+	.menu-container {
+		@include mq(mq-land) {
+			height: calc(var(--logo-H) * 1.5);
+			top: calc(var(--pad-T) * 0.5);
+		}
+	}
+
+	.abs-link {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.desktop-hide {
+		visibility: visible;
+		display: initial;
+
+		@include mq(mq-land) {
+			visibility: hidden;
+			display: none;
+		}
+	}
+
+	.nav-switch {
+		display: none;
+	}
+
+	.hamburger {
+		display: block;
+		margin: 0;
+		font-size: 0;
+		line-height: 0;
+
+		@include mq(mq-land) {
+			display: none;
+		}
+	}
+
+	.list-none > li {
+		list-style: none;
+	}
+
+	.menu-container li,
+	.menu-container .submenu {
+		opacity: 0;
+		transition: opacity 0.5s 0.3s;
+
+		@include mq(mq-land) {
+			opacity: 1;
+		}
+	}
+
+	.nav-switch:checked ~ label ~ .menu-container {
+		background-color: var(--menu-bg);
+
+		li,
+		.submenu {
+			opacity: 1;
+		}
+	}
+
+	.hamburger span {
+		transition: background 0s $global-transistion-duration;
+
+		&::before,
+		&::after {
+			transition-duration: $global-transistion-duration, $global-transistion-duration;
+			transition-delay: $global-transistion-duration, 0s;
+		}
+
+		&::before {
+			transition-property: top, transform;
+		}
+
+		&::after {
+			transition-property: bottom, transform;
+		}
+	}
+
+	.nav-switch:checked ~ label span::before {
+		transform: rotate(45deg);
+	}
+
+	.nav-switch:checked ~ label span::after {
+		transform: rotate(-45deg);
+	}
+
+	.nav-switch:checked ~ label span::before,
+	.nav-switch:checked ~ label span::after {
+		transition-delay: $global-transistion-duration, $global-transistion-duration;
+	}
+
+	.menu a,
+	.main-nav-list a {
+		&:not(.btn),
+		&.hover-underline {
+			&::after {
+				transform: translateX(-100%);
+				transition: transform #{$dur}s;
+			}
+
+			&:hover::after,
+			&:focus::after,
+			&:active::after {
+				transform: translateX(0);
+			}
+		}
 	}
 }
